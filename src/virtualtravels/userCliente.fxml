@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="virtualtravels.UserClienteController">
+   <children>
+      <ImageView fitHeight="602.0" fitWidth="921.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Img/gussian.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="602.0" fitWidth="921.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Img/backgroundBlue.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tablaCliente" layoutX="26.0" layoutY="120.0" onMouseClicked="#seleccionColumnaCliente" prefHeight="451.0" prefWidth="871.0">
+         <columns>
+            <TableColumn fx:id="colIdCliente" prefWidth="40.0" text="Nº" />
+            <TableColumn fx:id="colNombreCliente" prefWidth="120.0" text="Nombre" />
+            <TableColumn fx:id="colApePaternoCliente" prefWidth="132.0" text="Apellido P" />
+            <TableColumn fx:id="colApeMaternoCliente" prefWidth="131.0" text="Apellido  M" />
+            <TableColumn fx:id="coltelefonoCliente" minWidth="0.0" prefWidth="117.0" text="Telefono" />
+            <TableColumn fx:id="colDniCliente" prefWidth="121.0" text="DNI" />
+            <TableColumn fx:id="colSexoCliente" prefWidth="38.0" text="Sexo" />
+            <TableColumn fx:id="colEmailCliente" prefWidth="172.0" text="Email" />
+         </columns>
+      </TableView>
+      <HBox fx:id="cbxTitleWindow" alignment="CENTER" layoutX="8.0" layoutY="20.0" prefHeight="39.0" prefWidth="906.0" style="-fx-background-color: #002C48;">
+         <children>
+            <Text fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Registros de Clientes">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Text>
+         </children>
+      </HBox>
+      <HBox fx:id="hbxBtnICRUD" layoutX="8.0" layoutY="75.0" prefHeight="30.0" prefWidth="491.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#btnAgregar" prefHeight="30.0" prefWidth="96.0" styleClass="btnICRUD" stylesheets="@../estilos/cliente.css" text="Agregar">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="18.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../iconos/Add_30px.png" />
+                     </image>
+                     <effect>
+                        <Lighting>
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant color="BLACK" />
+                           </light>
+                        </Lighting>
+                     </effect>
+                  </ImageView>
+               </graphic>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#btnActualizarPnel" prefHeight="30.0" prefWidth="114.0" styleClass="btnICRUD" stylesheets="@../estilos/cliente.css" text="Actualizar">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="15.0" />
+               </HBox.margin>
+               <graphic>
+                  <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../iconos/actualizar.png" />
+                     </image>
+                     <effect>
+                        <Lighting>
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant color="BLACK" />
+                           </light>
+                        </Lighting>
+                     </effect>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button maxWidth="122.0" mnemonicParsing="false" onAction="#btnEliminarCliente" prefHeight="30.0" prefWidth="106.0" styleClass="btnICRUD" stylesheets="@../estilos/cliente.css" text="Eliminar">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../iconos/remove_30px.png" />
+                     </image>
+                     <effect>
+                        <Lighting>
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant color="BLACK" />
+                           </light>
+                        </Lighting>
+                     </effect>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="15.0" />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#btnInfoUsu" prefHeight="30.0" prefWidth="125.0" styleClass="btnICRUD" stylesheets="@../estilos/cliente.css" text="Información">
+               <HBox.margin>
+                  <Insets left="15.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../iconos/acerca_de.png" />
+                     </image>
+                     <effect>
+                        <Lighting>
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant color="BLACK" />
+                           </light>
+                        </Lighting>
+                     </effect>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+      <Pane fx:id="paneAgregar" layoutX="287.0" layoutY="19.0" prefHeight="564.0" prefWidth="348.0" style="-fx-background-color: lightgray; -fx-background-radius: 5; -fx-border-color: gray; -fx-border-radius: 5;" visible="false">
+         <children>
+            <VBox layoutX="53.0" layoutY="69.0" prefHeight="409.0" prefWidth="241.0">
+               <children>
+                  <Label text="ID">
+                     <VBox.margin>
+                        <Insets bottom="3.0" left="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="txtIdCliente" editable="false">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label text="Nombre">
+                     <VBox.margin>
+                        <Insets bottom="3.0" left="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="txtNombreCliente">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label text="Apellido Paterno">
+                     <VBox.margin>
+                        <Insets bottom="3.0" left="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="txtApePaternoCliente">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label text="Apellido Materno">
+                     <VBox.margin>
+                        <Insets bottom="3.0" left="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="txtApeMaternoCliente">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label text="Telefono">
+                     <VBox.margin>
+                        <Insets bottom="3.0" left="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="txtTelefonoCliente">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label text="email">
+                     <VBox.margin>
+                        <Insets bottom="3.0" left="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="txtEmail">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sexo">
+                     <VBox.margin>
+                        <Insets left="5.0" />
+                     </VBox.margin>
+                  </Text>
+                  <HBox alignment="CENTER" prefHeight="20.0" prefWidth="166.0">
+                     <children>
+                        <RadioButton fx:id="rdMasculinoCliente" mnemonicParsing="false" text="M">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="groupSex" />
+                           </toggleGroup>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </RadioButton>
+                        <RadioButton fx:id="rdFemeninoCliente" mnemonicParsing="false" text="F" toggleGroup="$groupSex">
+                           <HBox.margin>
+                              <Insets left="50.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </RadioButton>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="3.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="DNI">
+                     <VBox.margin>
+                        <Insets left="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Text>
+                  <TextField fx:id="txtDniCliente">
+                     <VBox.margin>
+                        <Insets top="3.0" />
+                     </VBox.margin>
+                  </TextField>
+               </children>
+            </VBox>
+            <Button layoutX="319.0" mnemonicParsing="false" onAction="#btnClosePneAgregar" stylesheets="@../estilos/cliente.css" text="X">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="root" />
+                  <String fx:value="btnClose" />
+               </styleClass>
+            </Button>
+            <Separator layoutX="54.0" layoutY="40.0" opacity="0.39" prefHeight="2.0" prefWidth="241.0" />
+            <Button fx:id="btnActualizarCliente" layoutX="53.0" layoutY="520.0" mnemonicParsing="false" onAction="#btnActualizarCliente" prefHeight="30.0" prefWidth="241.0" styleClass="btnPanelIcrud" stylesheets="@../estilos/cliente.css" text="Actualizar">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label fx:id="lblTituloIcrud" alignment="CENTER" layoutX="54.0" layoutY="17.0" prefHeight="27.0" prefWidth="241.0" text="TITULO DE ACCION">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnGuardarCliente" layoutX="53.0" layoutY="521.0" mnemonicParsing="false" onAction="#btnGuardarCliente" prefHeight="29.0" prefWidth="241.0" styleClass="btnPanelIcrud" stylesheets="@../estilos/cliente.css" text="GUARDAR">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="paneWarninRemove" layoutX="326.0" layoutY="250.0" prefHeight="82.0" prefWidth="269.0" style="-fx-background-color: lightgray; -fx-background-radius: 5;" visible="false">
+         <children>
+            <Text fill="#464646" fontSmoothingType="LCD" layoutX="77.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Eliminar Usuario" wrappingWidth="115.00000132620335">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Text>
+            <Button layoutX="135.0" layoutY="36.0" mnemonicParsing="false" onAction="#btnCancelRemove" prefHeight="30.0" prefWidth="115.0" styleClass="btnCancel" stylesheets="@../estilos/cliente.css" text="Cancelar">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button layoutX="14.0" layoutY="36.0" mnemonicParsing="false" onAction="#btnRemoveUser_paneWarning" prefHeight="30.0" prefWidth="116.0" styleClass="btnWarninRemove" stylesheets="@../estilos/cliente.css" text="Eliminar">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="paneInfoUsu" layoutX="287.0" layoutY="18.0" prefHeight="564.0" prefWidth="348.0" style="-fx-background-color: lightgray; -fx-background-radius: 5; -fx-border-color: gray; -fx-border-radius: 5;" visible="false">
+         <children>
+            <Text fontSmoothingType="LCD" layoutX="14.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Informe de">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Text>
+            <Separator layoutX="14.0" layoutY="33.0" opacity="0.62" prefHeight="3.0" prefWidth="318.0" style="-fx-background-color: gray;" />
+            <Label fx:id="lblNombreUsu" layoutX="108.0" layoutY="10.0" prefHeight="25.0" prefWidth="177.0" text="Nombre de Usuario">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="82.0" layoutY="543.0" text="Virtual Tralvels      National Agency" textFill="#575757" textOverrun="LEADING_WORD_ELLIPSIS" />
+            <Label layoutX="157.0" layoutY="536.0" text="®" textFill="#575757" textOverrun="LEADING_WORD_ELLIPSIS" />
+            <Label layoutX="171.0" layoutY="543.0" text="|" textFill="#575757" textOverrun="LEADING_WORD_ELLIPSIS" />
+            <Text layoutX="14.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombres:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Text>
+            <Label fx:id="lblNombresUsus" layoutX="89.0" layoutY="68.0" prefHeight="17.0" prefWidth="165.0" text="Nombre de usuario" />
+            <Text layoutX="13.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Apellidos:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Text>
+            <Label fx:id="lblApellidosUsus" layoutX="89.0" layoutY="97.0" prefHeight="17.0" prefWidth="184.0" text="Apellidos del Usuario" />
+            <Label fx:id="lblCorreo" alignment="CENTER" layoutX="45.0" layoutY="139.0" prefHeight="17.0" prefWidth="241.0" text="Correo electronico" />
+            <Separator layoutX="68.0" layoutY="155.0" opacity="0.29" prefWidth="200.0" style="-fx-background-color: gray;" />
+            <Text layoutX="14.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registros de Viajes:">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Text>
+            <Label fx:id="lblViaje_one" alignment="CENTER" layoutX="46.0" layoutY="183.0" prefHeight="17.0" prefWidth="241.0" text="Viajo a: Destino" />
+            <Label fx:id="lbldate_one" alignment="CENTER" layoutX="45.0" layoutY="200.0" prefHeight="17.0" prefWidth="241.0" text="Fecha" />
+            <Label alignment="CENTER" layoutX="46.0" layoutY="229.0" prefHeight="17.0" prefWidth="241.0" text="Viajo a: Destino" />
+            <Label alignment="CENTER" layoutX="45.0" layoutY="246.0" prefHeight="17.0" prefWidth="241.0" text="Fecha" />
+            <Label alignment="CENTER" layoutX="54.0" layoutY="282.0" prefHeight="17.0" prefWidth="241.0" text="Viajo a: Destino" />
+            <Label alignment="CENTER" layoutX="53.0" layoutY="299.0" prefHeight="17.0" prefWidth="241.0" text="Fecha" />
+            <Label alignment="CENTER" layoutX="55.0" layoutY="322.0" prefHeight="17.0" prefWidth="241.0" text="Viajo a: Destino" />
+            <Label alignment="CENTER" layoutX="54.0" layoutY="339.0" prefHeight="17.0" prefWidth="241.0" text="Fecha" />
+            <Text layoutX="14.0" layoutY="389.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Detalles">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Text>
+            <Separator layoutX="14.0" layoutY="391.0" opacity="0.29" prefHeight="3.0" prefWidth="318.0" style="-fx-background-color: gray;" />
+            <Text layoutX="44.0" layoutY="415.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefono:">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="45.0" layoutY="443.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DNI:">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="44.0" layoutY="473.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Género:">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Label fx:id="lblTelephone" layoutX="103.0" layoutY="402.0" prefHeight="17.0" prefWidth="216.0" text="+51 999999999" />
+            <Label fx:id="lblDNI" layoutX="75.0" layoutY="430.0" prefHeight="17.0" prefWidth="184.0" text="88888888" />
+            <Label fx:id="lblGenero" layoutX="94.0" layoutY="460.0" text="Masculino / Femenino" />
+            <Button layoutX="319.0" mnemonicParsing="false" onAction="#btnCloseInfo" stylesheets="@../estilos/cliente.css" text="X">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="btnClose" />
+                  <String fx:value="root" />
+               </styleClass>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

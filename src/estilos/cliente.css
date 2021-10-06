@@ -1,0 +1,48 @@
+.root{
+    -fx-background-color: transparent;
+}
+.btnICRUD{
+    -fx-background-color: darkorange;
+    -fx-text-fill: black;
+    -fx-background-radius: 13;
+}
+.btnICRUD:hover{
+    -fx-background-color: #b98000eb;
+    -fx-cursor: hand;
+}
+.btnClose{
+    -fx-background-color: #80808061;
+}
+.btnClose:hover{
+    -fx-background-color: #8b0000eb;
+    -fx-cursor: hand;
+    -fx-text-fill: white;
+    -fx-background-radius: 0 5 0 5;
+}
+.btnCancel{
+    -fx-background-color: white;
+    -fx-background-radius: 3;
+}
+.btnCancel:hover{
+    -fx-background-color: #8e8e8e;
+    -fx-cursor: hand;
+}
+.btnWarninRemove{
+    -fx-background-color: white;
+    -fx-background-radius: 3;
+}
+.btnWarninRemove:hover{
+    -fx-background-color: darkred;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+}
+/*USUARIO DEL SISTEMA*/
+.btnPanelIcrud{
+    -fx-background-color: #0E1E3F;
+    -fx-text-fill: white;
+}
+.btnPanelIcrud:hover{
+    -fx-opacity: 1;
+    -fx-background-color: #0e3380;
+    -fx-cursor: hand;
+}

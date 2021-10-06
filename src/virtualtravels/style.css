@@ -1,0 +1,95 @@
+.root{
+    -fx-background-color: transparent;
+}
+/* estilos pagina inicio vbox*/
+.dtBase:hover{
+    -fx-background-color: #29374eb8;
+    -fx-background-radius: 0;
+}
+.btnBrraH{/*barra horizontal*/
+    -fx-opacity: 0.6;
+}
+.btnBrraH:hover{/*barra horizontal*/
+    -fx-opacity: 1;
+    -fx-background-color: #29374eb8;
+    -fx-background-radius: 0;
+}
+.infoBarraBD{
+    -fx-background-color: #efefefd9;
+    -fx-background-radius: 5;
+}
+.infoBarraBDLine{
+    -fx-background-color:#efefef96;
+}
+.infoBarraBDLine:hover{
+    -fx-background-color: white;
+}
+.infoBarraBDLineCodeDw:hover{
+    -fx-opacity: 1;
+    -fx-background-color: white;
+    -fx-text-fill: black;
+}
+.btnInicio:hover{
+    -fx-opacity: 1;
+    -fx-background-color: #29374e36;
+}
+.btnExit{
+    -fx-opacity: 0.6;
+}
+.btnExit:hover{
+    -fx-opacity: 1;
+}
+.txtB{/*barra de buscador*/
+    -fx-background-color: #1528485e;
+    -fx-text-fill: white;
+    -fx-border-color: lightgrey;
+    -fx-border-width: 0px 0px 1.4px 0px;
+}
+/*CENTER*/
+.newVentaFront{
+    -fx-background-color:  #03071B;
+    -fx-background-radius: 15;
+}
+.newVentaFront:hover{
+    -fx-background-color: #2670A2;
+}
+.destinos{
+    -fx-background-color:  white;
+    -fx-background-radius: 15;
+}
+.destinos:hover{
+    -fx-background-color: #efefefab;
+}
+.site{
+    -fx-background-color:  #002C48;
+    -fx-background-radius: 5;
+}
+.site:hover{
+    -fx-background-color: #07314ce0;
+}
+.btnOfertsFront{
+    -fx-background-color: #002C48;
+    -fx-background-radius: 10; 
+}
+.btnOfertsFront:hover{
+    -fx-background-color: #2B5BBF;
+}
+.btnCerrarSesion{
+    -fx-background-color: lightgrey;
+    -fx-text-fill: black;
+    -fx-background-radius: 0 0 5 5;
+}
+.btnCerrarSesion:hover{
+    -fx-background-color:#80808073;
+    -fx-cursor: hand;
+}
+.btnOpacity:hover{
+    -fx-opacity:0.6;
+}
+.usu:hover{
+    -fx-background-color: #1c26358c;
+    -fx-opacity: 1;
+}
+.btnNavegacion:hover{
+    -fx-opacity: 0.9;
+}

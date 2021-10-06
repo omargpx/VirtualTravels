@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="602.0" prefWidth="921.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="virtualtravels.EstadisticaController">
+   <children>
+      <ImageView fitHeight="602.0" fitWidth="921.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Img/gussian.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="602.0" fitWidth="921.0" opacity="0.9" pickOnBounds="true">
+         <image>
+            <Image url="@../Img/backgroundBlue.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tablaUsuario" layoutX="73.0" layoutY="112.0" onMouseClicked="#seleccionColum" prefHeight="460.0" prefWidth="796.0">
+         <columns>
+            <TableColumn fx:id="colId" prefWidth="42.0" text="Nº" />
+            <TableColumn fx:id="collNombre" prefWidth="147.0" text="Nombre" />
+            <TableColumn fx:id="colApePaterno" prefWidth="147.0" text="Apellido Paterno" />
+            <TableColumn fx:id="colApeMaterno" prefWidth="159.0" text="Apellido  Materno" />
+            <TableColumn fx:id="colUsuario" prefWidth="150.0" text="Usuario" />
+            <TableColumn fx:id="colContrasena" minWidth="8.0" prefWidth="150.0" text="Contraseña" />
+         </columns>
+      </TableView>
+      <HBox alignment="CENTER" layoutX="8.0" layoutY="14.0" prefHeight="40.0" prefWidth="901.0" style="-fx-background-color: #002942e0;">
+         <children>
+            <Text fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="REGISTRO DE USUARIOS VT">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Text>
+         </children>
+      </HBox>
+      <Label layoutX="4.0" layoutY="583.0" opacity="0.48" text="Virtual Tralvels      National Agency" textFill="WHITE" textOverrun="LEADING_WORD_ELLIPSIS" />
+      <Label layoutX="79.0" layoutY="576.0" opacity="0.48" text="®" textFill="WHITE" textOverrun="LEADING_WORD_ELLIPSIS" />
+      <Label layoutX="93.0" layoutY="583.0" opacity="0.48" text="|" textFill="WHITE" textOverrun="LEADING_WORD_ELLIPSIS" />
+      <HBox fx:id="hbxBtnICRUD" layoutX="8.0" layoutY="70.0" prefHeight="30.0" prefWidth="505.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#btnAgregar" prefHeight="30.0" prefWidth="99.0" styleClass="btnICRUD" stylesheets="@../estilos/cliente.css" text="Agregar">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="18.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../iconos/Add_30px.png" />
+                     </image>
+                     <effect>
+                        <Lighting>
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant color="BLACK" />
+                           </light>
+                        </Lighting>
+                     </effect>
+                  </ImageView>
+               </graphic>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+            <Button minHeight="-Infinity" mnemonicParsing="false" onAction="#btnActualizarPnel" prefHeight="30.0" prefWidth="119.0" styleClass="btnICRUD" stylesheets="@../estilos/cliente.css" text="Actualizar">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="15.0" />
+               </HBox.margin>
+               <graphic>
+                  <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../iconos/actualizar.png" />
+                     </image>
+                     <effect>
+                        <Lighting>
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant color="BLACK" />
+                           </light>
+                        </Lighting>
+                     </effect>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button maxWidth="122.0" mnemonicParsing="false" onAction="#btnEliminarUsuario" prefHeight="32.0" prefWidth="106.0" styleClass="btnICRUD" stylesheets="@../estilos/cliente.css" text="Eliminar">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../iconos/remove_30px.png" />
+                     </image>
+                     <effect>
+                        <Lighting>
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant color="BLACK" />
+                           </light>
+                        </Lighting>
+                     </effect>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="15.0" />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#btnInfoUsu" prefHeight="32.0" prefWidth="125.0" styleClass="btnICRUD" stylesheets="@../estilos/cliente.css" text="Información">
+               <HBox.margin>
+                  <Insets left="15.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../iconos/acerca_de.png" />
+                     </image>
+                     <effect>
+                        <Lighting>
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant color="BLACK" />
+                           </light>
+                        </Lighting>
+                     </effect>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+      <Pane fx:id="paneAgregar" layoutX="316.0" layoutY="26.0" prefHeight="564.0" prefWidth="348.0" style="-fx-background-color: lightgray; -fx-background-radius: 5; -fx-border-color: gray; -fx-border-radius: 5;" visible="false">
+         <children>
+            <VBox layoutX="54.0" layoutY="112.0" prefHeight="340.0" prefWidth="241.0">
+               <children>
+                  <Label text="ID">
+                     <VBox.margin>
+                        <Insets bottom="3.0" left="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="txtId" editable="false" promptText="example: 1">
+                     <VBox.margin>
+                        <Insets bottom="13.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label text="Nombre">
+                     <VBox.margin>
+                        <Insets bottom="3.0" left="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="txtNombre" promptText="Franchesco">
+                     <VBox.margin>
+                        <Insets bottom="13.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label text="Apellido Paterno">
+                     <VBox.margin>
+                        <Insets bottom="3.0" left="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="txtApePaterno" promptText="Bernoulli">
+                     <VBox.margin>
+                        <Insets bottom="13.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label text="Apellido Materno">
+                     <VBox.margin>
+                        <Insets bottom="3.0" left="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="txtApeMaterno" promptText="Bianchi">
+                     <VBox.margin>
+                        <Insets bottom="13.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label text="Usuario">
+                     <VBox.margin>
+                        <Insets bottom="3.0" left="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="txtUsuario" promptText="user@imFranches64">
+                     <VBox.margin>
+                        <Insets bottom="13.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label text="Contraseña">
+                     <VBox.margin>
+                        <Insets left="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="txtContrasena" promptText="thisIsmyPasword32">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </TextField>
+               </children>
+            </VBox>
+            <Button layoutX="319.0" mnemonicParsing="false" onAction="#btnClosePneAgregar" stylesheets="@../estilos/cliente.css" text="X">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="root" />
+                  <String fx:value="btnClose" />
+               </styleClass>
+            </Button>
+            <Separator layoutX="53.0" layoutY="53.0" opacity="0.39" prefHeight="2.0" prefWidth="241.0" style="-fx-background-color: gray;" />
+            <Label fx:id="lblTituloIcrud" alignment="CENTER" layoutX="53.0" layoutY="30.0" prefHeight="27.0" prefWidth="241.0" text="TITULO DE ACCION">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnGuardar" layoutX="54.0" layoutY="487.0" mnemonicParsing="false" onAction="#btnGuardar" prefHeight="29.0" prefWidth="241.0" styleClass="btnPanelIcrud" stylesheets="@../estilos/cliente.css" text="GUARDAR">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="btnActualizar" layoutX="54.0" layoutY="486.0" mnemonicParsing="false" onAction="#btnActualizar" prefHeight="29.0" prefWidth="241.0" styleClass="btnPanelIcrud" stylesheets="@../estilos/cliente.css" text="ACTUALIZAR">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="paneWarninRemove" layoutX="336.0" layoutY="260.0" prefHeight="82.0" prefWidth="269.0" style="-fx-background-color: lightgray; -fx-background-radius: 5;" visible="false">
+         <children>
+            <Text fill="#464646" fontSmoothingType="LCD" layoutX="77.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Eliminar Usuario" wrappingWidth="115.00000132620335">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Text>
+            <Button layoutX="135.0" layoutY="37.0" mnemonicParsing="false" onAction="#btnCancelRemove" prefHeight="30.0" prefWidth="115.0" styleClass="btnCancel" stylesheets="@../estilos/cliente.css" text="Cancelar">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button layoutX="14.0" layoutY="37.0" minHeight="-Infinity" mnemonicParsing="false" onAction="#btnRemove" prefHeight="29.0" prefWidth="106.0" styleClass="btnWarninRemove" stylesheets="@../estilos/cliente.css" text="ELIMINAR">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

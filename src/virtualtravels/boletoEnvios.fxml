@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="602.0" prefWidth="921.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171">
+   <children>
+      <ImageView fitHeight="602.0" fitWidth="921.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Img/misti_arequipa.jpg" />
+         </image>
+         <effect>
+            <GaussianBlur radius="5.0" />
+         </effect>
+      </ImageView>
+      <ImageView fitHeight="602.0" fitWidth="921.0" opacity="0.72" pickOnBounds="true">
+         <image>
+            <Image url="@../Img/backgroundBlue.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="144.0" layoutY="115.0" prefHeight="372.0" prefWidth="634.0" style="-fx-background-color: #ffffffc7; -fx-background-radius: 15;">
+         <children>
+            <Text fontSmoothingType="LCD" layoutX="6.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Boleto de Envios - VIRTUAL TRAVELS">
+               <font>
+                  <Font name="Consolas Bold" size="15.0" />
+               </font>
+            </Text>
+            <Separator layoutY="32.0" prefHeight="0.0" prefWidth="634.0" style="-fx-background-color: gray;" />
+            <ImageView fitHeight="26.0" fitWidth="28.0" layoutX="291.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../iconos/logVT.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="235.0" fitWidth="266.0" layoutX="186.0" layoutY="69.0" opacity="0.22" pickOnBounds="true">
+               <image>
+                  <Image url="@../iconos/logVT.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,46 @@
+.root {
+    -fx-background-color: transparent;
+}
+
+.btn{
+    -fx-text-alignment: center;
+    -fx-border-width: 2px; 
+    -fx-border-color: white;
+    -fx-text-fill:white;
+    -fx-border-radius: 0;
+}
+.btn:hover{
+    -fx-background-color: white;
+    -fx-text-alignment: center;
+    -fx-text-fill:black;
+    -fx-border-radius: 0;
+}
+.buscador{
+    -fx-border-color: white;
+    -fx-border-width: 0px 0px 2px 0px;
+    -fx-text-fill: white;
+}
+.imgBuscador:hover{
+    -fx-background-radius: 5; 
+    -fx-background-color: #272f3552;
+}
+.txt{
+    -fx-text-fill: white
+}
+.btnGenBoleto{
+    -fx-background-color: white;
+    -fx-background-radius: 0;
+}
+.btnGenBoleto:hover{
+    -fx-background-color: #efefefab;
+    -fx-background-radius: 0;
+}
+.cbx{
+    -fx-background-color: white;
+    -fx-background-radius: 0;
+}
+.calendar{
+    -fx-background-color: white;
+    -fx-background-radius: 0;
+    -fx-text-overrun: center-ellipsis;
+}

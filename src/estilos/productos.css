@@ -1,0 +1,16 @@
+/*
+    Created on : 17-dic-2020, 10:49:54
+    Author     : omar
+*/
+.btn{
+    -fx-background-color: #0E1E3F;
+    -fx-text-fill: white;
+}
+.btn:hover{
+    -fx-background-color: #0e3380;
+    -fx-cursor: hand;
+}
+.cbx{
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+}

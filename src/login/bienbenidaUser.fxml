@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="587.0" prefWidth="921.0" style="-fx-background-color: #03071B;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.BienbenidaUserController">
+   <children>
+      <Pane fx:id="paneBienbenida" layoutX="50.0" layoutY="103.0" prefHeight="382.0" prefWidth="821.0">
+         <children>
+            <ImageView fx:id="imgCheck" fitHeight="150.0" fitWidth="200.0" layoutX="329.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Img/check.gif" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="58.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenido al sistema Helix, en este sistema podras registrar clientes, reportes, registros de vuelos e incluso cambiar los datos personales de su cuenta." textAlignment="CENTER" wrappingWidth="764.13671875">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text fill="#808080" layoutX="207.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Recuerda que esta cuenta creada y todos sus datos seran revisados por el administrador" />
+            <Text fill="#6f6f6f" layoutX="346.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="cuenta rapida registrada" />
+            <Separator layoutX="311.0" layoutY="324.0" opacity="0.07" prefWidth="200.0" />
+         </children>
+      </Pane>
+      <Text fx:id="txtBienvenida" fill="#00f1c5" layoutX="281.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¡Bienvenido, nombre de usuario!" textAlignment="CENTER" wrappingWidth="370.9169921875">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Text>
+      <Button layoutX="14.0" layoutY="548.0" mnemonicParsing="false" onAction="#btnOmitir" style="-fx-background-color: lightgrey; -fx-background-radius: 0;" text="Omitir">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btnSiguiente" layoutX="819.0" layoutY="548.0" mnemonicParsing="false" onAction="#btnSiguiente" style="-fx-background-radius: 0;" styleClass="btnPanelIcrud" stylesheets="@../estilos/cliente.css" text="Siguiente">
+         <font>
+            <Font name="Verdana" size="13.0" />
+         </font>
+      </Button>
+      <Pane fx:id="panePerfil" layoutX="50.0" layoutY="96.0" prefHeight="439.0" prefWidth="832.0" style="-fx-background-color: #03071B;" visible="false">
+         <children>
+            <Text fill="WHITE" layoutX="271.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selecciona una foto de perfil que te identifique">
+               <font>
+                  <Font size="14.0" />
+               </font></Text>
+            <Circle fx:id="circlePerfil" fill="#cad0d7" layoutX="416.0" layoutY="164.0" radius="100.0" stroke="#00000001" strokeType="INSIDE" />
+            <Hyperlink layoutX="349.0" layoutY="281.0" onAction="#linkPerfil" text="Seleccionar una imagen" />
+         </children>
+      </Pane>
+      <Label fx:id="lblCorreo" alignment="CENTER" layoutX="303.0" layoutY="44.0" prefHeight="17.0" prefWidth="315.0" text="\@usuario" textAlignment="CENTER" textFill="#909090" />
+      <HBox fx:id="hbxTOP" alignment="TOP_RIGHT" layoutX="714.0" prefHeight="33.0" prefWidth="207.0">
+         <children>
+            <HBox alignment="TOP_CENTER" onMouseClicked="#btnMinimizar" opacity="0.57" prefHeight="33.0" prefWidth="37.0" stylesheets="@../estilos/logeo.css">
+               <children>
+                  <ImageView fitHeight="24.0" fitWidth="18.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../iconos/minimizar.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="minimizar" />
+                  <String fx:value="btnOpacity" />
+               </styleClass>
+            </HBox>
+            <HBox alignment="TOP_CENTER" onMouseClicked="#btnExit" opacity="0.57" prefHeight="33.0" prefWidth="37.0" stylesheets="@../estilos/logeo.css">
+               <children>
+                  <Label text="X" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="3.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="exit" />
+                  <String fx:value="btnOpacity" />
+               </styleClass>
+            </HBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

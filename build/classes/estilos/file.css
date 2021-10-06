@@ -1,0 +1,12 @@
+/*DOCrEPORT*/
+.btns{
+    -fx-background-color: lightgrey;
+    -fx-background-radius: 0;
+    -fx-cursor: hand;
+    -fx-opacity: 0.85;
+}
+.btns:hover{
+    -fx-background-color: white;
+    -fx-opacity: 1;
+}
+

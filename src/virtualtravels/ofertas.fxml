@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="602.0" prefWidth="921.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="virtualtravels.OfertasController">
+   <children>
+      <Pane fx:id="paneHalowen" prefHeight="538.0" prefWidth="797.0" visible="false">
+         <children>
+            <ImageView fitHeight="538.0" fitWidth="797.0" opacity="0.85" pickOnBounds="true">
+               <image>
+                  <Image url="@../imgOFERTAS/fondo_hallowen.jpeg" />
+               </image>
+            </ImageView>
+            <Text fontSmoothingType="LCD" layoutX="321.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¡OFERTAS!">
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0" startX="0.5238095238095238" startY="0.5476190476190476">
+                     <stops>
+                        <Stop color="#ff7809" />
+                        <Stop color="#8a3900" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+               <font>
+                  <Font name="System Bold" size="42.0" />
+               </font>
+            </Text>
+            <Pane layoutX="446.0" layoutY="106.0" prefHeight="361.0" prefWidth="323.0" style="-fx-background-color: #353434;" styleClass="ofer" stylesheets="@../estilos/ofertas.css">
+               <children>
+                  <ImageView fitHeight="164.0" fitWidth="107.0" layoutX="195.0" layoutY="99.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../imgOFERTAS/mochilaTours.jpg.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="100.0" fitWidth="80.0" layoutX="37.0" layoutY="131.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../imgOFERTAS/audifonos.png" />
+                     </image>
+                  </ImageView>
+                  <Text fill="WHITE" fontSmoothingType="LCD" layoutX="138.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+">
+                     <font>
+                        <Font name="System Bold" size="66.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="60.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Combo Hallowen">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="117.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="precio de locura" />
+                  <Button blendMode="LIGHTEN" layoutX="60.0" layoutY="278.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="230.0" style="-fx-background-color: #FFBC01;" styleClass="buttons" stylesheets="@../estilos/ofertas.css" text="\$150">
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane layoutX="32.0" layoutY="106.0" prefHeight="361.0" prefWidth="323.0" style="-fx-background-color: #353434;" styleClass="ofer" stylesheets="@../estilos/ofertas.css" />
+            <ImageView fitHeight="193.0" fitWidth="209.0" layoutX="297.0" layoutY="331.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../imgOFERTAS/calabaza.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <HBox fx:id="msjSinOfertas" alignment="CENTER_LEFT" layoutX="358.0" layoutY="254.0" prefHeight="30.0" prefWidth="282.0">
+         <children>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Img/error_conex.png" />
+               </image>
+            </ImageView>
+            <Label prefHeight="17.0" prefWidth="254.0" text="NO HAY OFERTAS DISPONIBLES.">
+               <HBox.margin>
+                  <Insets left="4.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

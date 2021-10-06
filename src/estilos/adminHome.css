@@ -1,0 +1,55 @@
+.root{
+    -fx-background-color: transparent;
+}
+.eleccionPrincipal{
+   -fx-background-color: #d3d3d3ab;
+   -fx-background-radius: 10;
+}
+.eleccionPrincipal:hover{
+    -fx-background-color: lightgrey;
+    -fx-cursor: hand;
+    -fx-border-color: linear-gradient(to bottom, transparent,  darkgray);
+    -fx-border-radius: 9;
+    
+}
+.btnNavegacion{
+    -fx-text-fill: white;
+    -fx-opacity: 0.5;
+    -fx-text-alignment: left;
+}
+.btnNavegacion:hover{
+    -fx-opacity: 1;
+    -fx-border-color: darkcyan;
+    -fx-border-width: 0px 0px 1.5px 0px;
+    -fx-cursor: hand;
+}
+.btnExit:hover{
+    -fx-background-color: #00294238;
+    -fx-cursor: hand;
+    -fx-opacity: 1;
+}
+/*configuracion*/
+.btnsC{
+    -fx-background-color: white;
+    -fx-background-radius: 0;
+    -fx-opacity: 0.9;
+}
+.btnsC:hover{
+    -fx-background-color: lightgray;
+    -fx-opacity: 1;
+    -fx-cursor: hand;
+}
+.btnsC:pressed{
+    -fx-background-color:gray; 
+    -fx-text-fill:lightgray;
+}
+.panelCofig{
+    -fx-background-color: linear-gradient(to bottom, transparent,transparent,transparent,#d3d3d361);
+}
+.checkC{
+    -fx-text-fill: #9a9a9a;
+}
+.checkC:hover{
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+}

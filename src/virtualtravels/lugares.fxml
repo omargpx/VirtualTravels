@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="602.0" prefWidth="921.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="virtualtravels.LugaresController">
+   <children>
+      <ImageView fitHeight="602.0" fitWidth="921.0" opacity="0.85" pickOnBounds="true">
+         <image>
+            <Image url="@../Img/gussian.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="602.0" fitWidth="921.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Img/backgroundBlue.png" />
+         </image>
+      </ImageView>
+      <HBox layoutX="14.0" layoutY="524.0" prefHeight="30.0" prefWidth="195.0" />
+      <TableView fx:id="tablaLugares" layoutX="145.0" layoutY="113.0" onMouseClicked="#seleccionColumna" prefHeight="452.0" prefWidth="625.0">
+        <columns>
+          <TableColumn fx:id="colID" prefWidth="43.0" text="nº" />
+          <TableColumn fx:id="colLugares" prefWidth="290.0" text="Lugar" />
+            <TableColumn fx:id="colPasajes" prefWidth="291.0" text="Pasajes Disponibles" />
+        </columns>
+      </TableView>
+      <HBox alignment="CENTER" layoutX="8.0" layoutY="14.0" prefHeight="49.0" prefWidth="899.0" style="-fx-background-color: #002C48;">
+         <children>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Productos (lugares)">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Text>
+         </children></HBox>
+      <Label layoutX="3.0" layoutY="585.0" opacity="0.41" text="Virtual Tralvels      National Agency" textFill="WHITE" textOverrun="LEADING_WORD_ELLIPSIS" />
+      <Label layoutX="78.0" layoutY="578.0" opacity="0.41" text="®" textFill="WHITE" textOverrun="LEADING_WORD_ELLIPSIS" />
+      <Label layoutX="92.0" layoutY="585.0" opacity="0.41" text="|" textFill="WHITE" textOverrun="LEADING_WORD_ELLIPSIS" />
+      <HBox fx:id="hbxBtnICRUD" layoutX="14.0" layoutY="75.0" prefHeight="32.0" prefWidth="436.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#btnAgregarPanel" prefHeight="30.0" prefWidth="106.0" styleClass="btnICRUD" stylesheets="@../estilos/cliente.css" text="Agregar">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="18.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../iconos/Add_30px.png" />
+                     </image>
+                     <effect>
+                        <Lighting>
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant color="BLACK" />
+                           </light>
+                        </Lighting>
+                     </effect>
+                  </ImageView>
+               </graphic>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#btnActualizarPnel" prefHeight="30.0" prefWidth="114.0" styleClass="btnICRUD" stylesheets="@../estilos/cliente.css" text="Actualizar">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="15.0" />
+               </HBox.margin>
+               <graphic>
+                  <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../iconos/actualizar.png" />
+                     </image>
+                     <effect>
+                        <Lighting>
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant color="BLACK" />
+                           </light>
+                        </Lighting>
+                     </effect>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#btnInfo" prefHeight="30.0" prefWidth="125.0" styleClass="btnICRUD" stylesheets="@../estilos/cliente.css" text="Información">
+               <HBox.margin>
+                  <Insets left="15.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../iconos/acerca_de.png" />
+                     </image>
+                     <effect>
+                        <Lighting>
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant color="BLACK" />
+                           </light>
+                        </Lighting>
+                     </effect>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+      <Pane fx:id="paneICRUDproductos" layoutX="310.0" layoutY="128.0" prefHeight="421.0" prefWidth="312.0" style="-fx-background-color: lightgrey; -fx-background-radius: 6; -fx-border-color: gray; -fx-border-radius: 5;" visible="false">
+         <children>
+            <Label fx:id="lblTitlePane" alignment="CENTER" layoutX="28.0" layoutY="6.0" prefHeight="17.0" prefWidth="249.0" text="Title Action">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <VBox layoutX="32.0" layoutY="58.0" prefHeight="234.0" prefWidth="249.0">
+               <children>
+                  <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Id">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Text>
+                  <TextField fx:id="txtID" maxWidth="-Infinity" prefHeight="27.0" prefWidth="249.0" promptText="write id" stylesheets="@../estilos/productos.css">
+                     <VBox.margin>
+                        <Insets top="3.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Lugar">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="5.0" top="15.0" />
+                     </VBox.margin>
+                  </Text>
+                  <ComboBox fx:id="cbxLugares" prefHeight="25.0" prefWidth="251.0" promptText="Seleccionar" styleClass="cbx" stylesheets="@../estilos/productos.css">
+                     <VBox.margin>
+                        <Insets top="3.0" />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ComboBox>
+                  <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Pasajes">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="5.0" top="15.0" />
+                     </VBox.margin>
+                  </Text>
+                  <TextField fx:id="txtPasajes" maxWidth="-Infinity" prefHeight="27.0" prefWidth="289.0" promptText="write #pasajes" stylesheets="@../estilos/productos.css">
+                     <VBox.margin>
+                        <Insets top="3.0" />
+                     </VBox.margin>
+                  </TextField>
+               </children>
+            </VBox>
+            <Separator layoutX="37.0" layoutY="30.0" opacity="0.5" prefHeight="3.0" prefWidth="231.0" style="-fx-background-color: grey;" />
+            <Button fx:id="btnGuardar" layoutX="45.0" layoutY="348.0" mnemonicParsing="false" onAction="#btnGuardar" prefHeight="30.0" prefWidth="223.0" styleClass="btn" stylesheets="@../estilos/productos.css" text="Guardar">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnActualizar" layoutX="45.0" layoutY="318.0" mnemonicParsing="false" onAction="#btnActualizar" prefHeight="30.0" prefWidth="223.0" styleClass="btn" stylesheets="@../estilos/productos.css" text="Actualizar">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button layoutX="285.0" mnemonicParsing="false" onAction="#btnClose" stylesheets="@../estilos/cliente.css" text="X">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="btnClose" />
+                  <String fx:value="root" />
+               </styleClass>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,13 @@
+.buttons:hover{
+    -fx-font-weigth: bold; 
+    -fx-border-color:#DF2E02;
+    -fx-border-width: 0px 2px 0px 2px;
+    -fx-font-size: 22;
+}
+.ofer:hover{
+    -fx-border-color:#DF2E02;
+    -fx-border-width: 0px 2px 0px 2px;
+    -fx-rotate: 5;
+    -fx-rotate:-2;
+}
+

@@ -1,0 +1,11 @@
+/* 
+    Created on : 14-dic-2020, 15:50:48
+    Author     : omar
+*/
+.btn{
+    -fx-background-color: #00395de3;
+    -fx-background-radius: 15; 
+}
+.btn:hover{
+    -fx-background-color: #002C48;
+}

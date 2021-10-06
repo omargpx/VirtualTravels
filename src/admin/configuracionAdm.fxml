@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="604.0" prefWidth="921.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.ConfiguracionAdmController">
+   <children>
+      <ImageView fitHeight="604.0" fitWidth="921.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Img/gussian.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="604.0" fitWidth="921.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Img/backgroundBlue.png" />
+         </image>
+      </ImageView>
+      <ToggleButton fx:id="btnChangeCuenta" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnChangeCuenta" prefHeight="25.0" prefWidth="188.0" styleClass="btnsC" stylesheets="@../estilos/adminHome.css" text="Cambiar Usuario y Contraseña" />
+      <Pane fx:id="paneCambioCuenta" layoutX="461.0" layoutY="14.0" prefHeight="257.0" prefWidth="441.0" styleClass="panelCofig" stylesheets="@../estilos/adminHome.css">
+         <children>
+            <Text fill="WHITE" layoutX="103.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cambiar Cuenta Administrativa">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="13.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuario">
+               <font>
+                  <Font name="Consolas" size="14.0" />
+               </font>
+            </Text>
+            <TextField fx:id="txtUsuarioAdm" layoutX="12.0" layoutY="50.0" prefHeight="25.0" prefWidth="277.0" />
+            <Text fill="WHITE" layoutX="12.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nueva clave">
+               <font>
+                  <Font name="Consolas" size="14.0" />
+               </font>
+            </Text>
+            <CheckBox fx:id="checkConfirmacionCuenta" layoutX="16.0" layoutY="192.0" mnemonicParsing="false" onAction="#chekCuenta" styleClass="checkC" stylesheets="@../estilos/adminHome.css" text="Realizar cambios" textFill="#9a9a9a">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></CheckBox>
+            <Button fx:id="btnGuardar_panelChangeCuenta" layoutX="173.0" layoutY="213.0" mnemonicParsing="false" onAction="#btnGuardarCambiodeCuemta" prefHeight="30.0" prefWidth="95.0" styleClass="btnsC" stylesheets="@../estilos/adminHome.css" text="GUARDAR">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Text fill="WHITE" fontSmoothingType="LCD" layoutX="12.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clave antigua">
+               <font>
+                  <Font name="Consolas" size="13.0" />
+               </font>
+            </Text>
+            <PasswordField fx:id="txtClaveAdmNew" layoutX="11.0" layoutY="153.0" prefHeight="25.0" prefWidth="277.0" />
+            <PasswordField fx:id="txtClaveAdmAntig" layoutX="12.0" layoutY="103.0" prefHeight="25.0" prefWidth="277.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

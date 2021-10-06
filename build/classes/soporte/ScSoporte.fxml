@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="602.0" prefWidth="921.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="soporte.ScSoporteController">
+   <children>
+      <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="602.0" prefWidth="921.0" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab style="-fx-cursor: hand;" text="Preguntas frecuentes">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="574.0" fitWidth="921.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../Img/turismo-lima.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="574.0" fitWidth="921.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../Img/backgroundBlue.png" />
+                           </image>
+                        </ImageView>
+                        <Pane fx:id="paneDark1" prefHeight="574.0" prefWidth="921.0" style="-fx-background-color: #000000ad;" visible="false" />
+                        <Text fill="WHITE" layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿Cómo registrar un Viaje?">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#d0d0d0" layoutX="14.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Para poder registrar un viaje, primero deberas registrar al cliente, para despues buscarlo a traves del DNI que tendrás que ingresar en el buscador de Destinos. También, deberás revisar si existen pasajes disponibles haciendo click en el combobox, en la cual saldra al costado un numero, que indíca el numero de pasajes disponibles de el destino seleccionado; en todo caso saldra un mensaje de error." textAlignment="JUSTIFY" wrappingWidth="411.13671875" />
+                        <Text fill="WHITE" layoutX="14.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿Cómo registrar a un Usuario?">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#dadada" layoutX="16.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Solo los administradores tienen el acceso a poder registrar un usuario. Esta accion se puede realizar ingresando con una cuenta administrativa o desde la ventana de inicio. Hay una tercera accion que es a través de una clave brindada por el administrador." textAlignment="JUSTIFY" wrappingWidth="407.794921875" />
+                        <Text fill="WHITE" layoutX="16.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿Cómo validar un boleto existente?">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Text>
+                        <Text fill="WHITE" layoutX="17.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="En la parte de navegacion, ubicada en la parte izquierda de la ventna existe un apartado &quot;Boletos&quot;, en este podra ingresar el codigo de viaje en el buscador para validar el boleto." wrappingWidth="405.13671875" />
+                        <CheckBox fx:id="btnDarkThem" layoutX="14.0" layoutY="551.0" mnemonicParsing="false" onAction="#btnDarkThem" text="DarkStyle" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="11.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </CheckBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab style="-fx-cursor: hand;" text="Reportar un problema">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" stylesheets="@../virtualtravels/style.css">
+                     <children>
+                        <ImageView fitHeight="574.0" fitWidth="921.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../Img/gussian.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="574.0" fitWidth="921.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../Img/backgroundBlue.png" />
+                           </image>
+                        </ImageView>
+                        <Pane fx:id="paneDark2" prefHeight="574.0" prefWidth="921.0" style="-fx-background-color: #000000ad;" visible="false" />
+                        <TextField fx:id="txtmsjReporte" layoutX="14.0" layoutY="534.0" onKeyPressed="#txtKeypresed_reportProblem" prefHeight="25.0" prefWidth="796.0" promptText="write massage...." style="-fx-background-color: #ffffff33; -fx-text-fill: white;">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </TextField>
+                        <Button layoutX="820.0" layoutY="534.0" mnemonicParsing="false" onAction="#btnEnviar" prefHeight="25.0" prefWidth="87.0" styleClass="btnPanelIcrud" stylesheets="@../estilos/cliente.css" text="Enviar">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <ImageView fitHeight="34.0" fitWidth="35.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../iconos/Logo.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="53.0" layoutY="21.0" text="¿En que podemos ayudarte?" textFill="#c3c3c3" />
+                        <Text fill="WHITE" layoutX="310.0" layoutY="523.0" opacity="0.27" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="btnOpacity" text="Recuerda que solo podrás enviar un solo mensaje" />
+                        <VBox layoutX="14.0" layoutY="51.0" prefHeight="166.0" prefWidth="854.0">
+                           <children>
+                              <HBox alignment="TOP_RIGHT" prefHeight="27.0" prefWidth="158.0">
+                                 <children>
+                                    <HBox fx:id="hbxMSJclient" alignment="TOP_RIGHT" prefHeight="27.0" prefWidth="777.0" style="-fx-background-color: #afafaf26; -fx-background-radius: 5;">
+                                       <children>
+                                          <Text fx:id="msjCliente" fill="#2bff00" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="762.13671875">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" right="10.0" top="5.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets right="5.0" top="3.0" />
+                                       </HBox.margin>
+                                    </HBox>
+                                    <ImageView fx:id="imgCliente" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true">
+                                       <image>
+                                          <Image url="@../iconos/user_50px.png" />
+                                       </image>
+                                       <effect>
+                                          <Lighting diffuseConstant="0.33" specularConstant="0.65" specularExponent="0.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                              <HBox fx:id="hbxVT" prefHeight="50.0" prefWidth="854.0">
+                                 <children>
+                                    <ImageView fx:id="imgVT" fitHeight="34.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../iconos/Logo.png" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox prefHeight="34.0" prefWidth="493.0" style="-fx-background-color: #afafaf26; -fx-background-radius: 5;">
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" left="3.0" top="5.0" />
+                                       </HBox.margin>
+                                       <children>
+                                          <Text fx:id="txtRespuestSistem" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="352.13671875">
+                                             <VBox.margin>
+                                                <Insets left="5.0" top="5.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                          <Text fill="#a4a4a4" strokeType="OUTSIDE" strokeWidth="0.0" text="sistema Helix">
+                                             <font>
+                                                <Font size="10.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets bottom="3.0" left="5.0" top="3.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

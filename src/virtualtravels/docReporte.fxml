@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="602.0" prefWidth="921.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="virtualtravels.DocReporteController">
+   <children>
+      <ImageView fitHeight="602.0" fitWidth="921.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Img/gussian.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="602.0" fitWidth="921.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Img/backgroundBlue.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtTitleName" layoutX="14.0" layoutY="14.0" prefHeight="27.0" prefWidth="349.0" promptText="Title File // Titulo del archivo" style="-fx-background-color: #b1b1b140; -fx-text-fill: white; -fx-border-color: grey; -fx-border-width: 1px;" />
+      <TextArea fx:id="txtContentArea" layoutX="14.0" layoutY="50.0" prefHeight="545.0" prefWidth="648.0" promptText="Report . . ." wrapText="true">
+         <font>
+            <Font name="Times New Roman" size="12.0" />
+         </font>
+      </TextArea>
+      <Button layoutX="373.0" layoutY="16.0" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" onAction="#btnGuardarDoc" prefHeight="24.0" prefWidth="24.0" styleClass="btns" stylesheets="@../estilos/file.css">
+         <graphic>
+            <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../iconos/save.png" />
+               </image>
+               <effect>
+                  <Lighting diffuseConstant="0.0" specularConstant="0.0" specularExponent="40.0" surfaceScale="10.0">
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button layoutX="409.0" layoutY="16.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnAgregar" prefHeight="24.0" prefWidth="24.0" styleClass="btns" stylesheets="@../estilos/file.css">
+         <graphic>
+            <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../iconos/plus.png" />
+               </image>
+               <effect>
+                  <Lighting diffuseConstant="0.0" specularConstant="0.0" specularExponent="40.0" surfaceScale="10.0">
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+            </ImageView>
+         </graphic>
+      </Button>
+      <ComboBox fx:id="cbxReportes" layoutX="442.0" layoutY="15.0" prefHeight="25.0" prefWidth="178.0" promptText="Seleccionar" />
+      <Button layoutX="635.0" layoutY="15.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnEliminarReporte" prefHeight="24.0" prefWidth="24.0" styleClass="btns" stylesheets="@../estilos/file.css">
+         <graphic>
+            <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../iconos/remove_30px.png" />
+               </image>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant color="BLACK" />
+                     </light>
+                  </Lighting>
+               </effect>
+            </ImageView>
+         </graphic>
+      </Button>
+      <VBox alignment="TOP_CENTER" layoutX="671.0" layoutY="50.0" prefHeight="545.0" prefWidth="242.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#btnUbicacionReporte" prefHeight="25.0" prefWidth="248.0" style="-fx-cursor: hand;" styleClass="btns" stylesheets="@../estilos/file.css" text="Ubicacion de reportes">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#btnAbrirCarpetadeReportes" prefHeight="25.0" prefWidth="383.0" style="-fx-cursor: hand;" styleClass="btns" stylesheets="@../estilos/file.css" text="Abrir carpeta de reportes">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#btnNuevoReporte" prefHeight="25.0" prefWidth="388.0" style="-fx-cursor: hand;" styleClass="btns" stylesheets="@../estilos/file.css" text="Nuevo reporte">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Separator opacity="0.13" prefWidth="200.0">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Separator>
+            <Text fill="#aeaeae" strokeType="OUTSIDE" strokeWidth="0.0" text="En ésta área de texto podras escribir un reporte (comunicados), que irán dirigidos directamente al administrador." textAlignment="CENTER" wrappingWidth="220.13671875">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Text>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane id="AnchorPane" prefHeight="602.0" prefWidth="921.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="soporte.RedesSocialesController">
+   <children>
+      <WebView fx:id="webView" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Pane fx:id="eft" prefHeight="602.0" prefWidth="727.0" style="-fx-background-color: #2f212187;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Button alignment="CENTER" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#refresh" prefHeight="35.0" prefWidth="36.0" style="-fx-background-color: #000000d1; -fx-background-radius: 15;">
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../iconos/refresh.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button alignment="CENTER" layoutX="14.0" layoutY="52.0" mnemonicParsing="false" onAction="#btnInfo" prefHeight="35.0" prefWidth="36.0" style="-fx-background-color: #000000d1; -fx-background-radius: 15;">
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../iconos/info%20(2).png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Pane fx:id="paneInfo" layoutX="297.0" layoutY="243.0" prefHeight="117.0" prefWidth="328.0" style="-fx-background-color: #000000a3; -fx-background-radius: 8;">
+         <children>
+            <Text fill="WHITE" layoutX="62.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INFORMACION SOBRE LA WEB">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="14.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="un facil acceso laboral a redes mas utilizadas. no se recopila la informacion en ninguna  base de datos este apartado sirve como un simulador de navegador" wrappingWidth="299.5703125" />
+            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="4.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../iconos/info%20(2).png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

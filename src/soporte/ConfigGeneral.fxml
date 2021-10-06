@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" fx:id="ap" prefHeight="587.0" prefWidth="921.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="soporte.ConfigGeneralController">
+   <children>
+      <BorderPane fx:id="bp" layoutX="1.0" prefHeight="587.0" prefWidth="921.0">
+         <left>
+            <VBox fx:id="paneButtons" prefHeight="587.0" prefWidth="214.0" style="-fx-background-color: #031024;" BorderPane.alignment="CENTER">
+               <children>
+                  <ToggleButton fx:id="btnGeneral" alignment="CENTER_LEFT" minHeight="-Infinity" mnemonicParsing="false" onAction="#btnGeneral" onMouseEntered="#btnGeneralEnt" onMouseExited="#btnGeneralExt" prefHeight="25.0" prefWidth="232.0" selected="true" style="-fx-background-radius: 0;" stylesheets="@configGeneral.css" text="General" textFill="WHITE">
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="btnNav" />
+                     </styleClass>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="configuraciones" />
+                     </toggleGroup>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </ToggleButton>
+                  <ToggleButton fx:id="btnConection" alignment="CENTER_LEFT" minHeight="-Infinity" mnemonicParsing="false" onAction="#btnConection" onMouseEntered="#btnConectionEnt" onMouseExited="#btnConectionExt" prefHeight="25.0" prefWidth="322.0" style="-fx-background-radius: 0;" stylesheets="@configGeneral.css" text="Conexión" textFill="WHITE" toggleGroup="$configuraciones">
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="btnNav" />
+                     </styleClass>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </ToggleButton>
+                  <ToggleButton fx:id="btnAcercaDe" alignment="CENTER_LEFT" minHeight="-Infinity" mnemonicParsing="false" onAction="#btnAcercaDe" onMouseEntered="#btnAcercaDeEnt" onMouseExited="#btnAcercaDeExt" prefHeight="25.0" prefWidth="297.0" style="-fx-background-radius: 0;" stylesheets="@configGeneral.css" text="Acerca de" textFill="WHITE" toggleGroup="$configuraciones">
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="btnNav" />
+                     </styleClass>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </ToggleButton>
+               </children>
+            </VBox>
+         </left>
+         <center>
+            <AnchorPane fx:id="apMini" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #040310;" BorderPane.alignment="CENTER">
+               <children>
+                  <Text fill="WHITE" layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dark  mode">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="14.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Always on top">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <Hyperlink layoutX="86.0" layoutY="12.0" onAction="#linkEdit" text="· edit" textFill="#686868">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Hyperlink>
+                  <Pane fx:id="paneCustom" layoutX="316.0" layoutY="11.0" prefHeight="204.0" prefWidth="370.0" style="-fx-background-color: #212c3340; -fx-background-radius: 3;">
+                     <children>
+                        <Text fill="WHITE" layoutX="161.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Custom">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <Text fill="WHITE" layoutX="36.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="cap1" />
+                        <Text fill="WHITE" layoutX="132.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="cap2" />
+                        <Text fill="WHITE" layoutX="244.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Capa 1" />
+                        <Text fill="WHITE" layoutX="247.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Capa 2" />
+                        <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="294.0" layoutY="14.0" opacity="0.44" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Img/brush.png" />
+                           </image>
+                        </ImageView>
+                        <ColorPicker fx:id="colorpick1" layoutX="247.0" layoutY="71.0" onAction="#colorpick1" prefHeight="25.0" prefWidth="109.0" />
+                        <ColorPicker fx:id="colorpick2" layoutX="247.0" layoutY="134.0" onAction="#colorpick2" prefHeight="25.0" prefWidth="109.0" />
+                        <Rectangle fx:id="paneCap1" arcHeight="5.0" arcWidth="5.0" height="132.0" layoutX="14.0" layoutY="54.0" stroke="#ffffff00" strokeType="INSIDE" width="60.0" />
+                        <Rectangle fx:id="paneCap2" arcHeight="5.0" arcWidth="5.0" fill="#7a7b7c" height="132.0" layoutX="74.0" layoutY="54.0" stroke="#ffffff00" strokeType="INSIDE" width="148.0" />
+                     </children>
+                  </Pane>
+                  <Text fill="WHITE" layoutX="14.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sincronice acounts">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="536.0" layoutY="363.0" opacity="0.67" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Img/Phone%20maintenance_Isometric.png" />
+                     </image>
+                  </ImageView>
+                  <JFXToggleButton fx:id="darkThem" layoutX="5.0" layoutY="21.0" onAction="#darkThem" size="7.0" text="Off" textFill="WHITE" />
+                  <JFXToggleButton fx:id="AlwayOnTop" layoutX="5.0" layoutY="82.0" onAction="#AlwayOnTop" size="7.0" text="Off" textFill="WHITE" />
+                  <JFXToggleButton fx:id="Togleacounts" layoutX="5.0" layoutY="139.0" onAction="#Togleacounts" selected="true" size="7.0" text="On" textFill="WHITE" unToggleColor="WHITE" />
+                  <Pane fx:id="paneConnection" layoutX="1.0" prefHeight="553.0" prefWidth="705.0" style="-fx-background-color: #040310;">
+                     <children>
+                        <Pane layoutX="14.0" layoutY="14.0" prefHeight="231.0" prefWidth="457.0" style="-fx-background-color: #212c3340; -fx-background-radius: 3;">
+                           <children>
+                              <Text fill="WHITE" layoutX="14.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Establecer conexión a la base de datos (MySQL)" />
+                              <Separator layoutX="16.0" layoutY="23.0" opacity="0.05" prefHeight="2.0" prefWidth="390.0" />
+                              <JFXTextField fx:id="txtBD" focusColor="WHITE" layoutX="110.0" layoutY="46.0" prefHeight="25.0" prefWidth="203.0" promptText="BD connection" style="-fx-text-fill: white;" unFocusColor="WHITE" />
+                              <JFXPasswordField fx:id="pswBD" focusColor="WHITE" layoutX="110.0" layoutY="103.0" prefHeight="25.0" prefWidth="203.0" promptText="Password" style="-fx-text-fill: white;" unFocusColor="WHITE" />
+                              <Button layoutX="179.0" layoutY="151.0" mnemonicParsing="false" onAction="#btnConectar" styleClass="btnConection" stylesheets="@configGeneral.css" text="Conectar" textFill="WHITE" />
+                              <Button layoutX="422.0" layoutY="23.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnInfo" prefHeight="30.0" prefWidth="21.0" stylesheets="@configGeneral.css">
+                                 <graphic>
+                                    <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../iconos/info%20(2).png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <styleClass>
+                                    <String fx:value="transparent" />
+                                    <String fx:value="btnOpacity" />
+                                 </styleClass>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <ImageView fitHeight="80.0" fitWidth="91.0" layoutX="326.0" layoutY="59.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Img/Phone%20maintenance_Isometric.png" />
+                                 </image>
+                              </ImageView>
+                              <Hyperlink layoutX="1.0" layoutY="208.0" onAction="#dwloadCodeBD" text="Descargar codigo de base de datos (archivo mysql)." textFill="#6b6b6b" />
+                              <Button layoutX="85.0" layoutY="48.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-border-color: white; -fx-border-width: 0px 0px 1px 0px;" styleClass="transparent" stylesheets="@configGeneral.css">
+                                 <graphic>
+                                    <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../iconos/dataBase.png" />
+                                       </image>
+                                       <effect>
+                                          <Lighting diffuseConstant="0.63" specularConstant="0.86" specularExponent="0.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button layoutX="85.0" layoutY="105.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-border-color: white; -fx-border-width: 0px 0px 1px 0px;" styleClass="transparent" stylesheets="@configGeneral.css">
+                                 <graphic>
+                                    <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../iconos/lock.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </Pane>
+                        <ImageView fitHeight="230.0" fitWidth="249.0" layoutX="238.0" layoutY="309.0" opacity="0.16" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Img/Data%20and%20settings_Two%20Color.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="paneAcercaDe" layoutX="3.0" prefHeight="544.0" prefWidth="701.0" style="-fx-background-color: #040310;" visible="false">
+                     <children>
+                        <ImageView fitHeight="382.0" fitWidth="366.0" layoutY="188.0" opacity="0.38" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Img/Information%20flow_Flatline.png" />
+                           </image>
+                        </ImageView>
+                        <VBox alignment="TOP_CENTER" layoutX="153.0" layoutY="2.0" prefHeight="250.0" prefWidth="396.0">
+                           <children>
+                              <Text fill="#cdcdcd" strokeType="OUTSIDE" strokeWidth="0.0" text="Virtual Travels, Aplicativo Software desarrllado para empresas. Mantiene un sistema seguro en sus archivadores a traves de la iteraccion de una base de datos. Permite y facilita al usuario a poder registrar en tablas campos, reportes, registros de clientes e incluso cambiar los datos personales de su cuenta." textAlignment="JUSTIFY" wrappingWidth="395.13671875" />
+                              <Text fill="#bfbfbf" strokeType="OUTSIDE" strokeWidth="0.0" text="Cuenta con campo administrativo en el mismo apartado de inicio del aplicativo. Este campo permite al administrador revisar las estadisticas de las acciones realizadas por los trabajadores, los cuales cuentan con su propia vista en la aplicacion a traves de su cuenta creada en la empresa. No obstante,  el administrador puede revisar las interacciones de sus trabajadores y revisar los reportes como haci mismo los mensajes propios de cada trabajador (chatReporte de ayuda de los empleados al administrador), estos son vistos solo desde la cuenta administrativa." textAlignment="JUSTIFY" wrappingWidth="395.1367134153843">
+                                 <VBox.margin>
+                                    <Insets top="25.0" />
+                                 </VBox.margin>
+                              </Text>
+                           </children>
+                        </VBox>
+                        <VBox alignment="TOP_CENTER" layoutX="154.0" layoutY="246.0" prefHeight="170.0" prefWidth="396.0" style="-fx-border-color: grey; -fx-border-width: 1px 0px 0px 0px;">
+                           <children>
+                              <Text fill="#d3d3d3" strokeType="OUTSIDE" strokeWidth="0.0" text="Creditos:" wrappingWidth="63.13671341538429">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="4.0" />
+                                 </VBox.margin>
+                              </Text>
+                              <Text fill="#c6c6c6" strokeType="OUTSIDE" strokeWidth="0.0" text="Iconos de diseño de las ventanas - Apppichon®   " textAlignment="CENTER" wrappingWidth="395.1367134153843">
+                                 <VBox.margin>
+                                    <Insets top="3.0" />
+                                 </VBox.margin>
+                              </Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Iconos - BoxIcons®" textAlignment="CENTER" wrappingWidth="395.1367134153843" />
+                              <Text fill="#d7d7d7" strokeType="OUTSIDE" strokeWidth="0.0" text="Imagenes - ManyPixels®" textAlignment="CENTER" wrappingWidth="395.1367134153843">
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Imagenes - Pixabay®" />
+                              <Text fill="#d3d3d3" strokeType="OUTSIDE" strokeWidth="0.0" text="Desarrollado por:">
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </Text>
+                              <Text fill="#d0d0d0" strokeType="OUTSIDE" strokeWidth="0.0" text="DobayDev">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Hyperlink text="www.helixhome.com" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </Pane>
+                  <Label layoutX="3.0" layoutY="538.0" opacity="0.45" text="Virtual Tralvels      National Agency" textFill="WHITE" textOverrun="LEADING_WORD_ELLIPSIS" />
+                  <Label layoutX="78.0" layoutY="531.0" opacity="0.45" text="®" textFill="WHITE" textOverrun="LEADING_WORD_ELLIPSIS" />
+                  <Label layoutX="92.0" layoutY="538.0" opacity="0.45" text="|" textFill="WHITE" textOverrun="LEADING_WORD_ELLIPSIS" />
+               </children>
+            </AnchorPane>
+         </center>
+         <top>
+            <HBox fx:id="hbxTop" prefHeight="32.0" prefWidth="921.0" style="-fx-background-color: #040310;" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox fx:id="hbxBack" alignment="CENTER_LEFT" prefHeight="27.0" prefWidth="214.0" style="-fx-background-color: #031024;">
+                     <children>
+                        <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#btnAtras" prefHeight="25.0" prefWidth="28.0" styleClass="transparent" stylesheets="@configGeneral.css">
+                           <graphic>
+                              <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../iconos/back.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text=" Iniciar Sesión">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="35.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" onMouseClicked="#btnMinimizar" prefHeight="33.0" prefWidth="37.0" styleClass="minimizar" stylesheets="@../estilos/logeo.css">
+                     <children>
+                        <ImageView fitHeight="24.0" fitWidth="18.0" opacity="0.7" pickOnBounds="true">
+                           <image>
+                              <Image url="@../iconos/minimizar.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <HBox.margin>
+                        <Insets left="634.0" />
+                     </HBox.margin>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" onMouseClicked="#btnExit" prefHeight="33.0" prefWidth="37.0" styleClass="exit" stylesheets="@../estilos/logeo.css">
+                     <children>
+                        <Label opacity="0.78" text="X" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets top="3.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <HBox.margin>
+                        <Insets left="0.48" />
+                     </HBox.margin>
+                  </HBox>
+               </children>
+            </HBox>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>

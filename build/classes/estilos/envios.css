@@ -1,0 +1,20 @@
+.root{
+    -fx-background-color: #a2aaab45;
+}
+.txt{
+    -fx-border-color: lightgray;
+    -fx-border-width: 0px 0px 2px 0px;
+    -fx-text-fill: white;
+    -fx-background-radius: 0;
+}
+.btn{
+    -fx-background-color: white;
+    -fx-background-radius: 0;
+}
+.btn:hover{
+    -fx-background-color: #efefefc7;
+}
+.cbx{
+    -fx-background-color: white;
+    -fx-background-radius: 0;
+}

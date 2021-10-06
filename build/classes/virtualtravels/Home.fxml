@@ -1,0 +1,1300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="bp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1120.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="virtualtravels.HomeController">
+   <top>
+      <HBox prefHeight="48.0" prefWidth="1120.0" style="-fx-background-color: #031024;" BorderPane.alignment="CENTER">
+         <children>
+            <HBox onMouseClicked="#home" opacity="0.45" prefHeight="63.0" prefWidth="200.0" styleClass="btnInicio" stylesheets="@style.css">
+               <children>
+                  <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../iconos/Logo.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Helix aspersa" wrappingWidth="136.13671875">
+                     <HBox.margin>
+                        <Insets left="2.0" top="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Text>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+            <HBox fx:id="dtBase" fillHeight="false" onMouseEntered="#BDEntered" onMouseExited="#BDExited" prefHeight="60.0" prefWidth="40.0" styleClass="dtBase" stylesheets="@style.css">
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../iconos/database_48px.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="5.0" top="10.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="48.0" prefWidth="391.0">
+               <children>
+                  <TextField prefHeight="31.0" prefWidth="372.0" promptText="Buscar..." stylesheets="@style.css">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                     <styleClass>
+                        <String fx:value="root" />
+                        <String fx:value="txtB" />
+                     </styleClass>
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../iconos/search_24px.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="5.0" top="3.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </HBox>
+            <Button fx:id="btnUbicación" mnemonicParsing="false" onAction="#btnUbicación" prefHeight="48.0" prefWidth="44.0" stylesheets="@style.css">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../iconos/ubicacion.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <styleClass>
+                  <String fx:value="btnBrraH" />
+                  <String fx:value="root" />
+               </styleClass>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="btnMarketWeb" mnemonicParsing="false" onAction="#btnMarketWeb" prefHeight="48.0" prefWidth="44.0" stylesheets="@style.css">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../iconos/market.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <styleClass>
+                  <String fx:value="root" />
+                  <String fx:value="btnBrraH" />
+               </styleClass>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <HBox alignment="CENTER_LEFT" onMouseClicked="#btnInfoUsu" prefHeight="48.0" prefWidth="279.0" styleClass="btnBrraH" stylesheets="@style.css">
+               <children>
+                  <Circle fx:id="circlePerfil" fill="WHITE" radius="16.0" stroke="#00000030" strokeType="INSIDE">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Circle>
+                  <Label fx:id="lblNombreUsu" prefHeight="20.0" prefWidth="208.0" text="Nombre Usuario" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+            <Pane onMouseClicked="#btnNotificacion" prefHeight="48.0" prefWidth="49.0" styleClass="btnBrraH" stylesheets="@style.css">
+               <children>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="13.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../iconos/notificación.png" />
+                     </image>
+                     <effect>
+                        <Lighting specularConstant="2.0" specularExponent="0.0">
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant />
+                           </light>
+                        </Lighting>
+                     </effect>
+                  </ImageView>
+                  <ImageView fx:id="ntfActivo" fitHeight="10.0" fitWidth="10.0" layoutX="28.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../iconos/Noti.png" />
+                     </image>
+                     <effect>
+                        <Lighting specularConstant="2.0" specularExponent="0.0">
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant color="#07eb16" />
+                           </light>
+                        </Lighting>
+                     </effect>
+                  </ImageView>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Pane>
+            <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#btnMinimizar" opacity="0.52" prefHeight="35.0" prefWidth="37.0" stylesheets="@../estilos/logeo.css">
+               <children>
+                  <ImageView fitHeight="24.0" fitWidth="18.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../iconos/minimizar.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="minimizar" />
+                  <String fx:value="btnOpacity" />
+               </styleClass>
+            </HBox>
+            <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" onMouseClicked="#btnExit" opacity="0.52" prefHeight="35.0" prefWidth="37.0" stylesheets="@../estilos/logeo.css">
+               <children>
+                  <Label text="X" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="3.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="exit" />
+                  <String fx:value="btnOpacity" />
+               </styleClass>
+            </HBox>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <AnchorPane fx:id="ap" prefHeight="602.0" prefWidth="921.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="602.0" fitWidth="921.0" layoutX="-1.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../Img/gussian.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="602.0" fitWidth="921.0" layoutX="-1.0" opacity="0.48" pickOnBounds="true">
+               <image>
+                  <Image url="@../Img/backgroundBlue.png" />
+               </image>
+            </ImageView>
+            <Pane layoutX="16.0" layoutY="10.0" prefHeight="159.0" prefWidth="561.0" style="-fx-background-color: #002C48; -fx-background-radius: 10;">
+               <children>
+                  <VBox prefHeight="159.0" prefWidth="357.0">
+                     <children>
+                        <HBox prefHeight="28.0" prefWidth="474.0">
+                           <children>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenido ">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Text>
+                              <Label fx:id="nombreUsuDash" prefHeight="25.0" prefWidth="243.0" text="Nombre de Usuario" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="19.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="10.0" top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <Text fill="#c9c9c9" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Actividades">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="20.0" top="20.0" />
+                           </VBox.margin>
+                        </Text>
+                        <HBox alignment="CENTER_LEFT" prefHeight="43.0" prefWidth="387.0">
+                           <children>
+                              <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#btnDestinos" prefHeight="35.0" prefWidth="181.0" styleClass="newVentaFront" stylesheets="@style.css">
+                                 <children>
+                                    <Text fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Registrar Nuevo Viaje">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="5.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                    <ImageView fitHeight="14.0" fitWidth="14.0" pickOnBounds="true" preserveRatio="true">
+                                       <HBox.margin>
+                                          <Insets left="3.0" top="3.0" />
+                                       </HBox.margin>
+                                       <image>
+                                          <Image url="@../iconos/plus.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </HBox>
+                              <HBox fx:id="btnClientes" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#btnClientes" prefHeight="35.0" prefWidth="129.0" styleClass="newVentaFront" stylesheets="@style.css">
+                                 <children>
+                                    <Text fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Nuevo Cliente">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="5.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                    <ImageView fitHeight="14.0" fitWidth="14.0" pickOnBounds="true" preserveRatio="true">
+                                       <HBox.margin>
+                                          <Insets left="3.0" top="3.0" />
+                                       </HBox.margin>
+                                       <image>
+                                          <Image url="@../iconos/plus.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </HBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="35.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="387.0" layoutY="5.0" opacity="0.25" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Img/logo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <VBox alignment="TOP_CENTER" layoutX="14.0" layoutY="185.0" prefHeight="70.0" prefWidth="100.0" styleClass="destinos" stylesheets="@style.css">
+               <children>
+                  <Text fx:id="txtLima" strokeType="OUTSIDE" strokeWidth="0.0" text="Lima">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Label fx:id="lblPasajesLima" text="Label">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="6.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </VBox>
+            <VBox alignment="TOP_CENTER" layoutX="120.0" layoutY="185.0" prefHeight="70.0" prefWidth="100.0" styleClass="destinos" stylesheets="@style.css">
+               <children>
+                  <Text fx:id="txtCusco" strokeType="OUTSIDE" strokeWidth="0.0" text="Cusco">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="lblPasajesCusco" text="Label">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="6.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </VBox>
+            <VBox alignment="TOP_CENTER" layoutX="224.0" layoutY="185.0" prefHeight="70.0" prefWidth="100.0" styleClass="destinos" stylesheets="@style.css">
+               <children>
+                  <Text fx:id="txtIca" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Ica">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Label fx:id="lblPasajesIca" text="Label">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="6.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </VBox>
+            <VBox alignment="TOP_CENTER" layoutX="328.0" layoutY="185.0" prefHeight="70.0" prefWidth="100.0" styleClass="destinos" stylesheets="@style.css">
+               <children>
+                  <Text fx:id="txtTarapoto" strokeType="OUTSIDE" strokeWidth="0.0" text="Tarapoto">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Label fx:id="lblPasajesTarapoto" text="Label">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="6.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </VBox>
+            <HBox layoutX="14.0" layoutY="272.0" onMouseClicked="#btnMensajeria" prefHeight="43.0" prefWidth="273.0" styleClass="destinos" stylesheets="@style.css">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mensajerìa">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" top="11.0" />
+                     </HBox.margin>
+                  </Text>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets left="150.0" top="10.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../iconos/notificación.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="8.0" fitWidth="8.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../iconos/circle.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../iconos/right_gray.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+            <Label layoutX="4.0" layoutY="585.0" opacity="0.22" text="Virtual Tralvels      National Agency" textFill="WHITE" textOverrun="LEADING_WORD_ELLIPSIS" />
+            <Label layoutX="79.0" layoutY="578.0" opacity="0.22" text="®" textFill="WHITE" textOverrun="LEADING_WORD_ELLIPSIS" />
+            <Label layoutX="93.0" layoutY="585.0" opacity="0.22" text="|" textFill="WHITE" textOverrun="LEADING_WORD_ELLIPSIS" />
+            <VBox layoutX="593.0" layoutY="14.0" prefHeight="270.0" prefWidth="312.0" style="-fx-background-color: #010308; -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="firstIMGView" fitHeight="180.0" fitWidth="310.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../Img/machu%20picchu.jpg" />
+                     </image>
+                     <VBox.margin>
+                        <Insets left="1.0" top="1.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <HBox prefHeight="22.0" prefWidth="327.0">
+                     <children>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Machu Picchu">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="5.0" top="3.0" />
+                           </HBox.margin>
+                        </Text>
+                        <ImageView fitHeight="10.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../webSite/img/estrellas.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="150.0" top="7.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="24.0" prefWidth="327.0">
+                     <children>
+                        <Text fill="#b9b9b9" strikethrough="true" strokeType="OUTSIDE" strokeWidth="0.0" text="\$ 380">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </Text>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="\$350">
+                           <HBox.margin>
+                              <Insets left="210.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="301.0" styleClass="btnOfertsFront" stylesheets="@style.css">
+                     <VBox.margin>
+                        <Insets left="5.0" top="3.0" />
+                     </VBox.margin>
+                     <children>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Comprar">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="130.0" top="5.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox layoutX="593.0" layoutY="301.0" prefHeight="270.0" prefWidth="312.0" style="-fx-background-color: #010308; -fx-background-radius: 5;">
+               <children>
+                  <ImageView fitHeight="180.0" fitWidth="310.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../Img/huascaran.jpg" />
+                     </image>
+                     <VBox.margin>
+                        <Insets left="1.0" top="1.0" />
+                     </VBox.margin>
+                     <rotationAxis>
+                        <Point3D />
+                     </rotationAxis>
+                  </ImageView>
+                  <HBox prefHeight="22.0" prefWidth="327.0">
+                     <children>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Huascarán">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="5.0" top="3.0" />
+                           </HBox.margin>
+                        </Text>
+                        <ImageView fitHeight="10.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../webSite/img/estrellas.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="170.0" top="7.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="24.0" prefWidth="327.0">
+                     <children>
+                        <Text fill="#b9b9b9" strikethrough="true" strokeType="OUTSIDE" strokeWidth="0.0" text="\$ 420">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </Text>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="\$395">
+                           <HBox.margin>
+                              <Insets left="210.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="301.0" styleClass="btnOfertsFront" stylesheets="@style.css">
+                     <VBox.margin>
+                        <Insets left="5.0" top="3.0" />
+                     </VBox.margin>
+                     <children>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Comprar">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="130.0" top="5.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" layoutX="432.0" layoutY="185.0" prefHeight="70.0" prefWidth="100.0" styleClass="destinos" stylesheets="@style.css">
+               <children>
+                  <Text fx:id="txtArequipa" strokeType="OUTSIDE" strokeWidth="0.0" text="Arequipa">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Label fx:id="lblPasajesArequipa" text="Label">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="6.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </VBox>
+            <HBox fx:id="btnBoletoFront" layoutX="310.0" layoutY="272.0" onMouseClicked="#btnBoletoFront" prefHeight="43.0" prefWidth="262.0" styleClass="destinos" stylesheets="@style.css">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Boletería">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" top="11.0" />
+                     </HBox.margin>
+                  </Text>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets left="145.0" top="12.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../iconos/boletosss.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../iconos/right_gray.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+            <VBox fx:id="barraDTBase" layoutX="5.0" onMouseEntered="#barraInfoEntered" onMouseExited="#barraInfoExit" prefHeight="121.0" prefWidth="112.0" styleClass="infoBarraBD" stylesheets="@style.css" visible="false">
+               <children>
+                  <HBox prefHeight="27.0" prefWidth="112.0" styleClass="infoBarraBDLine" stylesheets="@style.css">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="BD">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Text>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../iconos/dataBase.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="60.0" top="5.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="1">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <Separator prefWidth="200.0" />
+                  <HBox onMouseEntered="#LineTablasBDEntered" onMouseExited="#LineTablasBDExited" prefHeight="27.0" prefWidth="112.0" styleClass="infoBarraBDLine" stylesheets="@style.css">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="TABLAS">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Text>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets left="25.0" top="5.0" />
+                           </HBox.margin>
+                           <image>
+                              <Image url="@../iconos/table_graph.png" />
+                           </image>
+                        </ImageView>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="4">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets top="4.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <Separator prefWidth="200.0" />
+                  <HBox onMouseEntered="#LineConexEntered" onMouseExited="#LineConexExited" prefHeight="27.0" prefWidth="112.0" styleClass="infoBarraBDLine" stylesheets="@style.css">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CONEXION">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Text>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../iconos/right_gray.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="15.0" top="5.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <Separator prefWidth="200.0" />
+                  <Button alignment="TOP_LEFT" mnemonicParsing="false" onMouseClicked="#downloadCODbd" opacity="0.6" prefHeight="25.0" prefWidth="112.0" stylesheets="@style.css" text="Code BD">
+                     <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../iconos/download_48px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="infoBarraBDLine" />
+                        <String fx:value="infoBarraBDLineCodeDw" />
+                     </styleClass>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox fx:id="barraConex" layoutX="118.0" layoutY="58.0" prefHeight="55.0" prefWidth="128.0" styleClass="infoBarraBD" stylesheets="@style.css" visible="false">
+               <children>
+                  <HBox prefHeight="25.0" prefWidth="128.0" styleClass="infoBarraBDLine" stylesheets="@style.css">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="BD">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Text>
+                        <Separator orientation="VERTICAL" prefHeight="200.0">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </Separator>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="virtual_travels">
+                           <HBox.margin>
+                              <Insets left="3.0" top="6.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <Separator prefWidth="200.0" />
+                  <HBox prefHeight="23.0" prefWidth="128.0" styleClass="infoBarraBDLine" stylesheets="@style.css">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Clave">
+                           <HBox.margin>
+                              <Insets left="5.0" top="5.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Separator orientation="VERTICAL" prefHeight="200.0">
+                           <HBox.margin>
+                              <Insets left="7.0" />
+                           </HBox.margin>
+                        </Separator>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="berlin64">
+                           <HBox.margin>
+                              <Insets left="3.0" top="5.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children></HBox>
+               </children>
+            </VBox>
+            <VBox fx:id="barraBDTables" layoutX="118.0" layoutY="26.0" prefHeight="99.0" prefWidth="122.0" styleClass="infoBarraBD" stylesheets="@style.css" visible="false">
+               <children>
+                  <HBox prefHeight="22.0" prefWidth="122.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Usuarios">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <Separator prefWidth="200.0" />
+                  <HBox prefHeight="22.0" prefWidth="122.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Clientes">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <Separator prefWidth="200.0" />
+                  <HBox prefHeight="22.0" prefWidth="122.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Productos">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <Separator prefWidth="200.0" />
+                  <HBox prefHeight="25.0" prefWidth="122.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ventas">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="5.0" top="1.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <Pane fx:id="paneInfoUsu" layoutX="524.0" prefHeight="125.0" prefWidth="278.0" style="-fx-background-color: lightgrey; -fx-background-radius: 0 0 5 5;" visible="false">
+               <children>
+                  <Label fx:id="lblNombreUsuario" layoutX="57.0" layoutY="14.0" prefHeight="17.0" prefWidth="188.0" text="NOMBRE DE USUARIO">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblCorreo" layoutX="57.0" layoutY="29.0" prefHeight="17.0" prefWidth="193.0" text="correo" />
+                  <Button layoutY="100.0" mnemonicParsing="false" onAction="#btnCerrarSesion" prefHeight="25.0" prefWidth="278.0" styleClass="btnCerrarSesion" stylesheets="@style.css" text="Cerrar Sesion" />
+                  <Separator layoutY="98.0" opacity="0.43" prefHeight="3.0" prefWidth="277.0" style="-fx-background-color: grey;" />
+                  <Button layoutX="251.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnConfiguracion" opacity="0.38" prefHeight="30.0" prefWidth="27.0" stylesheets="@style.css">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../iconos/gears_50px.png" />
+                           </image>
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant color="BLACK" />
+                                 </light>
+                              </Lighting>
+                           </effect>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="root" />
+                        <String fx:value="btnOpacity" />
+                     </styleClass>
+                  </Button>
+                  <Circle fx:id="circlePerfilPane" fill="WHITE" layoutX="29.0" layoutY="32.0" radius="22.0" stroke="#00000022" strokeType="INSIDE" />
+                  <Hyperlink layoutX="109.0" layoutY="75.0" text="Ver perfil" textFill="#014bab">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Hyperlink>
+               </children>
+            </Pane>
+            <HBox alignment="TOP_CENTER" layoutX="16.0" layoutY="327.0" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#btnSitioWeb" prefHeight="46.0" prefWidth="309.0" styleClass="site" stylesheets="@style.css">
+               <children>
+                  <Text fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Sitio Web">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="8.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+            <Pane fx:id="paneNotificacion" layoutX="562.0" prefHeight="219.0" prefWidth="282.0" style="-fx-background-color: lightgrey; -fx-background-radius: 5;" visible="false">
+               <children>
+                  <Label fx:id="lblSinNotificacion" layoutX="84.0" layoutY="103.0" text="No hay notificaciones" textFill="#5e5e5e" />
+                  <Pane fx:id="paneNTFEmergente" prefHeight="109.0" prefWidth="281.0" visible="false">
+                     <children>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="2.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../iconos/VTnotificacion.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="tituloEmrgNTF" layoutX="26.0" layoutY="6.0" prefHeight="17.0" prefWidth="147.0" text="Titulo - ntfEmergente">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="tipoNTFemergente" layoutX="172.0" layoutY="6.0" text="· tipo de notificacion" />
+                        <Label fx:id="lblFechaEmergenteNTF" alignment="CENTER_RIGHT" layoutX="174.0" layoutY="84.0" prefHeight="17.0" prefWidth="106.0" text="fecha">
+                           <font>
+                              <Font name="Consolas" size="11.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="parteMSJemergente" layoutX="26.0" layoutY="34.0" prefHeight="17.0" prefWidth="210.0" text="parte del mensaje" textFill="#6b6b6b" />
+                        <Text fill="#6b6b6b" layoutX="3.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Administración" />
+                        <Separator layoutX="1.0" layoutY="102.0" opacity="0.4" prefHeight="3.0" prefWidth="280.0" style="-fx-background-color: grey;" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="paneNTFnormal" layoutX="1.0" layoutY="112.0" prefHeight="102.0" prefWidth="281.0" visible="false">
+                     <children>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="2.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../iconos/VTnotificacion.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="tituloNTFnormal" layoutX="26.0" layoutY="6.0" prefHeight="17.0" prefWidth="140.0" text="Titulo - ntfNormal">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="tipoNTFNormal" layoutX="172.0" layoutY="6.0" text="· tipo de notificacion" />
+                        <Text fx:id="msjNTFnormal" fill="#868686" layoutX="29.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="parte del mensaje" wrappingWidth="223.13671875" />
+                        <Label fx:id="fechaNTFnormal" alignment="CENTER_RIGHT" layoutX="173.0" layoutY="83.0" prefHeight="17.0" prefWidth="106.0" text="fecha">
+                           <font>
+                              <Font name="Consolas" size="11.0" />
+                           </font>
+                        </Label>
+                        <Text fill="#6b6b6b" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Administración" />
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <Button fx:id="btnProductosFront" layoutX="542.0" layoutY="185.0" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#btnProductosFront" prefHeight="70.0" prefWidth="30.0" styleClass="destinos" stylesheets="@style.css">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="32.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../iconos/right_gray.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+   </center>
+   <left>
+      <Pane prefHeight="602.0" prefWidth="200.0" style="-fx-background-color: #051936;" BorderPane.alignment="CENTER">
+         <children>
+            <VBox fx:id="vbxNavigation" alignment="TOP_CENTER" prefHeight="602.0" prefWidth="40.0" style="-fx-background-color: #031024;">
+               <children>
+                  <Button fx:id="btnDestinos" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onMouseClicked="#btnDestinos" opacity="0.5" prefHeight="38.0" prefWidth="40.0" stylesheets="@style.css" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../iconos/map_64px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <styleClass>
+                        <String fx:value="btnNavegacion" />
+                        <String fx:value="root" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="btnEnvios" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onMouseClicked="#btnEnvios" opacity="0.5" prefHeight="38.0" prefWidth="40.0" stylesheets="@style.css" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../iconos/email_send_24px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="btnNavegacion" />
+                        <String fx:value="root" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="btnBoleto" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#btnBoleto" opacity="0.5" prefHeight="38.0" prefWidth="40.0" stylesheets="@style.css" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../iconos/boleto.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="btnNavegacion" />
+                        <String fx:value="root" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="btnUsuarioCliente" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#btnUsuarioCliente" opacity="0.5" prefHeight="38.0" prefWidth="40.0" stylesheets="@style.css" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../iconos/Contacto_48px.png" />
+                           </image>
+                           <effect>
+                              <Lighting diffuseConstant="2.0" specularConstant="1.91" specularExponent="21.4" surfaceScale="0.0">
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </effect>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="btnNavegacion" />
+                        <String fx:value="root" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="btnProducto" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#btnProducto" opacity="0.5" prefHeight="38.0" prefWidth="40.0" stylesheets="@style.css" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../iconos/white%20log.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="btnNavegacion" />
+                        <String fx:value="root" />
+                     </styleClass>
+                  </Button>
+                  <VBox alignment="CENTER" prefHeight="91.0" prefWidth="52.0">
+                     <children>
+                        <Separator opacity="0.11" prefHeight="2.0" prefWidth="76.0" />
+                        <Button fx:id="btnNewDocument" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnNewDocument" opacity="0.5" prefHeight="28.0" prefWidth="40.0" stylesheets="@style.css">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../iconos/Add_Document.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <styleClass>
+                              <String fx:value="btnNavegacion" />
+                              <String fx:value="root" />
+                           </styleClass>
+                           <VBox.margin>
+                              <Insets bottom="2.0" top="2.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="btnOfertas" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnOfertas" opacity="0.5" prefHeight="25.0" prefWidth="40.0" stylesheets="@style.css">
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../iconos/oferta_26px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <styleClass>
+                              <String fx:value="btnNavegacion" />
+                              <String fx:value="root" />
+                           </styleClass>
+                           <VBox.margin>
+                              <Insets bottom="2.0" top="2.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="btnAcercade" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnAcercade" opacity="0.5" prefHeight="25.0" prefWidth="40.0" stylesheets="@style.css">
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../iconos/acerca_de.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <styleClass>
+                              <String fx:value="btnNavegacion" />
+                              <String fx:value="root" />
+                           </styleClass>
+                           <VBox.margin>
+                              <Insets top="2.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <Circle fx:id="circlePerfilP" fill="#dadada" layoutX="119.0" layoutY="72.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label fx:id="lblNameUsu" alignment="CENTER" layoutX="45.0" layoutY="122.0" prefHeight="17.0" prefWidth="148.0" text=" Usuario VT" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER" layoutX="42.0" layoutY="152.0" prefHeight="26.0" prefWidth="158.0">
+               <children>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" onMouseClicked="#webFacebook" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../iconos/Faceboo.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <HBox.margin>
+                        <Insets right="3.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <ImageView fitHeight="18.0" fitWidth="18.0" onMouseClicked="#webInstagram" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../iconos/instagram.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="5.0" right="3.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" onMouseClicked="#webLinkedin" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets left="5.0" right="3.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../iconos/linkedin.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fitHeight="22.0" fitWidth="22.0" onMouseClicked="#webGmail" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../iconos/gmail.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children></HBox>
+            <Text fill="#979797" layoutX="43.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Parrafo de texto donde irá la biografia del usuario virtual travles, dado los oficios u ocupaciones, etc." textAlignment="JUSTIFY" wrappingWidth="152.13671875" />
+            <Separator layoutX="46.0" layoutY="147.0" opacity="0.08" prefHeight="0.0" prefWidth="150.0" style="-fx-background-color: grey;" />
+            <Text fill="WHITE" layoutX="47.0" layoutY="354.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Blog:" />
+            <Label layoutX="47.0" layoutY="358.0" prefHeight="17.0" prefWidth="145.0" text="www.miblog.com" textFill="#ababab" />
+            <Label layoutX="73.0" layoutY="584.0" text="Virtual Tralvels " textFill="WHITE" textOverrun="LEADING_WORD_ELLIPSIS">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant color="BLACK" />
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label layoutX="137.0" layoutY="577.0" text="®" textFill="WHITE" textOverrun="LEADING_WORD_ELLIPSIS">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant color="BLACK" />
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Pane layoutX="41.0" layoutY="283.0" onMouseEntered="#contntEmailEnt" onMouseExited="#contntEmailExt" prefHeight="43.0" prefWidth="160.0">
+               <children>
+                  <Text fill="WHITE" layoutX="8.0" layoutY="12.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" />
+                  <Label layoutX="9.0" layoutY="15.0" prefHeight="17.0" prefWidth="145.0" text="usuariovt@gmail.com" textFill="#9a9a9a" />
+                  <ImageView fx:id="btnConfiUsu" fitHeight="14.0" fitWidth="14.0" layoutX="144.0" layoutY="-1.0" opacity="0.1" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../iconos/gears_50px.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </left>
+</BorderPane>

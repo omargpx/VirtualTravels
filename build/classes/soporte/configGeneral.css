@@ -1,0 +1,35 @@
+.root{
+    -fx-background-color: #060c17e3;
+}
+.transparent{
+    -fx-background-color: transparent;
+}
+.btnConection{
+    -fx-background-color:   #00378c;
+    -fx-background-radius: 0;
+    -fx-cursor: hand;
+}
+.btnConection:hover{
+    -fx-background-color: #00378cde;
+    
+}
+.btnOpacity{
+    -fx-opacity: 0.5;
+}
+.btnOpacity:hover{
+    -fx-opacity: 0.9;
+    -fx-cursor: hand;
+}
+.btnNav{
+    -fx-background-radius: 0;
+    -fx-background-color: transparent;
+}
+.btnNav:hover{
+    -fx-cursor: hand;
+    -fx-background-color:#002c4861;
+}
+.btnNav:pressed{
+    -fx-background-color:  #002c48b8;
+    -fx-border-color: #2B5BBF;
+    -fx-border-width: 0px 0px 0px 2px;
+}

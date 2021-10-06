@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.BubbleChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="apChange" prefHeight="527.0" prefWidth="871.0" style="-fx-border-color: lightgrey; -fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AreaChart prefHeight="413.0" prefWidth="527.0" style="-fx-text-fill: white;" title="Vuelos">
+         <xAxis>
+            <CategoryAxis prefHeight="11.0" prefWidth="470.0" tickLabelFill="WHITE" />
+         </xAxis>
+         <yAxis>
+            <NumberAxis side="LEFT" tickLabelFill="WHITE" />
+         </yAxis>
+      </AreaChart>
+      <BubbleChart layoutX="528.0" prefHeight="299.0" prefWidth="343.0" title="Usuarios" titleSide="BOTTOM">
+         <xAxis>
+            <NumberAxis side="BOTTOM" tickLabelFill="WHITE" />
+         </xAxis>
+         <yAxis>
+            <NumberAxis side="LEFT" tickLabelFill="WHITE" />
+         </yAxis>
+      </BubbleChart>
+   </children>
+</AnchorPane>

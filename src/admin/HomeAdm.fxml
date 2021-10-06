@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="bp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="921.0" style="-fx-background-radius: 5 5 0 0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.HomeAdmController">
+   <top>
+      <Pane prefHeight="48.0" prefWidth="921.0" style="-fx-background-color: #061733;" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="BOTTOM_CENTER" layoutX="40.0" prefHeight="48.0" prefWidth="841.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#btnTrabajadores" prefHeight="25.0" prefWidth="160.0" stylesheets="@../estilos/adminHome.css" text="Trabajadores">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="root" />
+                        <String fx:value="btnNavegacion" />
+                     </styleClass>
+                     <HBox.margin>
+                        <Insets left="40.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#btnClientes" prefHeight="25.0" prefWidth="160.0" stylesheets="@../estilos/adminHome.css" text="Clientes">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="root" />
+                        <String fx:value="btnNavegacion" />
+                     </styleClass>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#btnProductos" prefWidth="160.0" stylesheets="@../estilos/adminHome.css" text="Productos">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="root" />
+                        <String fx:value="btnNavegacion" />
+                     </styleClass>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#btnReportes" prefHeight="25.0" prefWidth="160.0" stylesheets="@../estilos/adminHome.css" text="Reportes">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="btnNavegacion" />
+                        <String fx:value="root" />
+                     </styleClass>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#btnConfig" stylesheets="@../estilos/adminHome.css">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../iconos/settings_24px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <styleClass>
+                        <String fx:value="root" />
+                        <String fx:value="btnNavegacion" />
+                     </styleClass>
+                  </Button>
+               </children>
+            </HBox>
+            <Button layoutX="881.0" mnemonicParsing="false" onAction="#btnExit" opacity="0.5" prefHeight="48.0" prefWidth="40.0" stylesheets="@../estilos/adminHome.css">
+               <styleClass>
+                  <String fx:value="root" />
+                  <String fx:value="btnExit" />
+               </styleClass>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../iconos/exit_30px.png" />
+                     </image>
+                     <effect>
+                        <Lighting diffuseConstant="2.0" specularConstant="2.0" specularExponent="0.0">
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant />
+                           </light>
+                        </Lighting>
+                     </effect>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#btnHomeAdm" opacity="0.71" prefHeight="48.0" prefWidth="40.0" stylesheets="@../estilos/adminHome.css">
+               <styleClass>
+                  <String fx:value="root" />
+                  <String fx:value="btnExit" />
+               </styleClass>
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../iconos/home_24px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </Pane>
+   </top>
+   <center>
+      <AnchorPane fx:id="ap" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="604.0" prefWidth="921.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="604.0" fitWidth="921.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../Img/gussian.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="604.0" fitWidth="921.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../Img/backgroundBlue.png" />
+               </image>
+            </ImageView>
+            <Pane layoutX="68.0" layoutY="14.0" onMouseClicked="#elcUsuarios" prefHeight="220.0" prefWidth="380.0" styleClass="eleccionPrincipal" stylesheets="@../estilos/adminHome.css">
+               <children>
+                  <ImageView fitHeight="180.0" fitWidth="180.0" layoutX="100.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Img/Team%20work_Isometric.png" />
+                     </image>
+                  </ImageView>
+                  <Text layoutX="149.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="USUARIOS">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#a4a4a4" layoutX="60.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Control de datos de los trabajadores de empresa" />
+               </children></Pane>
+            <Pane layoutX="68.0" layoutY="260.0" onMouseClicked="#elcConfiguraciones" prefHeight="220.0" prefWidth="380.0" styleClass="eleccionPrincipal" stylesheets="@../estilos/adminHome.css">
+               <children>
+                  <ImageView fitHeight="170.0" fitWidth="170.0" layoutX="105.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Img/Phone%20maintenance_Isometric.png" />
+                     </image>
+                  </ImageView>
+                  <Text layoutX="129.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Configuraciones">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#a4a4a4" layoutX="82.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Configuraciones del plano administrativo" />
+               </children></Pane>
+            <Pane layoutX="473.0" layoutY="14.0" onMouseClicked="#elcEstadistyReporte" prefHeight="220.0" prefWidth="380.0" styleClass="eleccionPrincipal" stylesheets="@../estilos/adminHome.css">
+               <children>
+                  <ImageView fitHeight="180.0" fitWidth="180.0" layoutX="100.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Img/Data%20and%20settings_Isometric.png" />
+                     </image>
+                  </ImageView>
+                  <Text layoutX="105.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estadisticas y Reportes">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#a4a4a4" layoutX="58.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Acciones y reportes de los Usuarios (trabajadores)" />
+               </children></Pane>
+            <Pane layoutX="473.0" layoutY="260.0" onMouseClicked="#elcClientes" prefHeight="220.0" prefWidth="380.0" styleClass="eleccionPrincipal" stylesheets="@../estilos/adminHome.css">
+               <children>
+                  <ImageView fitHeight="170.0" fitWidth="170.0" layoutX="105.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Img/User%20interface_Isometric.png" />
+                     </image>
+                  </ImageView>
+                  <Text layoutX="160.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clientes">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#a4a4a4" layoutX="92.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Control de los clientes de la empresa" />
+               </children></Pane>
+            <Label layoutX="381.0" layoutY="587.0" opacity="0.55" text="Virtual Tralvels      National Agency" textFill="WHITE" textOverrun="LEADING_WORD_ELLIPSIS" />
+            <Label layoutX="456.0" layoutY="580.0" opacity="0.55" text="®" textFill="WHITE" textOverrun="LEADING_WORD_ELLIPSIS" />
+            <Label layoutX="470.0" layoutY="587.0" opacity="0.55" text="|" textFill="WHITE" textOverrun="LEADING_WORD_ELLIPSIS" />
+            <Pane layoutY="555.0" prefHeight="49.0" prefWidth="921.0" style="-fx-background-color: #00000073;">
+               <children>
+                  <Text fill="#ababab" layoutX="46.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Base de Datos:" />
+                  <ImageView fitHeight="12.0" fitWidth="12.0" layoutX="126.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../iconos/dataBase.png" />
+                     </image>
+                     <effect>
+                        <Lighting diffuseConstant="2.0" specularConstant="0.62" specularExponent="0.0">
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant />
+                           </light>
+                        </Lighting>
+                     </effect>
+                  </ImageView>
+                  <Text fill="#b9b9b9" layoutX="138.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#ababab" layoutX="174.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tablas en BD:  5" />
+                  <Text fill="#c6c6c6" layoutX="289.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="codigo de base de datos:" />
+                  <HBox alignment="CENTER_LEFT" layoutX="422.0" layoutY="5.0" prefHeight="23.0" prefWidth="90.0" style="-fx-cursor: hand;">
+                     <children>
+                        <Text fill="#eeeeee" strokeType="OUTSIDE" strokeWidth="0.0" text="Descargar">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </Text>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../iconos/download_48px.png" />
+                           </image>
+                           <effect>
+                              <Lighting diffuseConstant="0.4" specularConstant="0.67" specularExponent="0.0">
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </effect>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <Text fill="#b5b5b5" layoutX="557.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Documentación" />
+                  <Text fill="#ababab" layoutX="690.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Conexión de BD" />
+               </children>
+            </Pane>
+            <Pane layoutX="71.0" layoutY="494.0" onMouseClicked="#elcProductos" prefHeight="45.0" prefWidth="783.0" styleClass="eleccionPrincipal" stylesheets="@../estilos/adminHome.css">
+               <children>
+                  <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Img/Data%20and%20settings_Two%20Color.png" />
+                     </image>
+                  </ImageView>
+                  <Text layoutX="97.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Productos">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#a4a4a4" layoutX="180.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="| Actualización de los productos disponibles">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="745.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../iconos/derecha.png" />
+                     </image>
+                     <effect>
+                        <Lighting>
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant color="BLACK" />
+                           </light>
+                        </Lighting>
+                     </effect>
+                  </ImageView>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="721.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../iconos/derecha.png" />
+                     </image>
+                     <effect>
+                        <Lighting>
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant color="#868686" />
+                           </light>
+                        </Lighting>
+                     </effect>
+                  </ImageView>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="697.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../iconos/derecha.png" />
+                     </image>
+                     <effect>
+                        <Lighting>
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant color="#cdcdcd" />
+                           </light>
+                        </Lighting>
+                     </effect>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

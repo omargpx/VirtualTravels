@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" fx:id="apconfigUsu" prefHeight="602.0" prefWidth="921.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="soporte.ConfiguracionUsuarioController">
+   <children>
+      <ImageView fitHeight="602.0" fitWidth="921.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Img/gussian.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="602.0" fitWidth="921.0" opacity="0.63" pickOnBounds="true">
+         <image>
+            <Image url="@../Img/abstract.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="602.0" fitWidth="921.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Img/backgroundBlue.png" />
+         </image>
+      </ImageView>
+      <HBox alignment="CENTER" prefHeight="3.0" prefWidth="921.0">
+         <children>
+            <Text fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="CONFIGURACIÓN DE LA CUENTA">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Text>
+         </children>
+      </HBox>
+      <Label layoutX="779.0" layoutY="583.0" opacity="0.56" text="Helix     National Agency" textFill="WHITE" textOverrun="LEADING_WORD_ELLIPSIS" />
+      <Label layoutX="803.0" layoutY="576.0" opacity="0.56" text="®" textFill="WHITE" textOverrun="LEADING_WORD_ELLIPSIS" />
+      <Label layoutX="817.0" layoutY="583.0" opacity="0.56" text="|" textFill="WHITE" textOverrun="LEADING_WORD_ELLIPSIS" />
+      <VBox layoutX="14.0" layoutY="27.0" prefHeight="203.0" prefWidth="191.0">
+         <children>
+            <ToggleButton fx:id="btnPerfil" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#btnPerfil" prefHeight="25.0" prefWidth="190.0" styleClass="btnConfig" stylesheets="@../estilos/config.css" text="Perfil">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <graphic>
+                  <ImageView fx:id="img0" fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../iconos/derecha.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <toggleGroup>
+                  <ToggleGroup fx:id="configUsuario" />
+               </toggleGroup></ToggleButton>
+            <ToggleButton fx:id="btnNombres" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#btnNombres" prefHeight="30.0" prefWidth="190.0" styleClass="btnConfig" stylesheets="@../estilos/config.css" text="Nombres y Apellidos" toggleGroup="$configUsuario">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="1.0" />
+               </VBox.margin>
+               <graphic>
+                  <ImageView fx:id="img1" fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../iconos/derecha.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </ToggleButton>
+            <ToggleButton fx:id="btnContrasena" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#btnContrasena" prefHeight="30.0" prefWidth="190.0" styleClass="btnConfig" stylesheets="@../estilos/config.css" text="Contraseña" toggleGroup="$configUsuario">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="1.0" />
+               </VBox.margin>
+               <graphic>
+                  <ImageView fx:id="img3" fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../iconos/derecha.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </ToggleButton>
+            <ToggleButton fx:id="btnCorreo" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#btnCorreo" prefHeight="30.0" prefWidth="190.0" style="-fx-border-width: 0;" styleClass="btnConfig" stylesheets="@../estilos/config.css" text="Correo" toggleGroup="$configUsuario">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="1.0" />
+               </VBox.margin>
+               <graphic>
+                  <ImageView fx:id="img4" fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../iconos/derecha.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </ToggleButton>
+         </children>
+      </VBox>
+      <Pane fx:id="paneNombre" layoutX="379.0" layoutY="76.0" prefHeight="512.0" prefWidth="341.0" style="-fx-background-color: lightgrey; -fx-background-radius: 5;" visible="false">
+         <children>
+            <Text layoutX="12.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Recuerda no hacer cambios constantes a tu cuenta, puede alterar los datos de la cuenta" textAlignment="JUSTIFY" wrappingWidth="317.13671875">
+               <font>
+                  <Font name="Verdana" size="12.0" />
+               </font>
+            </Text>
+            <Label alignment="CENTER" layoutX="4.0" layoutY="14.0" prefHeight="23.0" prefWidth="334.0" text="Cambiar Nombre">
+               <font>
+                  <Font name="Verdana Bold" size="18.0" />
+               </font>
+            </Label>
+            <Separator layoutX="67.0" layoutY="122.0" opacity="0.44" prefWidth="200.0" style="-fx-background-color: grey;" />
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="83.0" layoutY="217.0" opacity="0.43" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../iconos/logVT.png" />
+               </image>
+            </ImageView>
+            <Hyperlink layoutX="15.0" layoutY="442.0" text="Politica y privacidad de la empresa" />
+            <Button layoutX="221.0" layoutY="473.0" mnemonicParsing="false" onAction="#btnGuardarNombre" styleClass="btnPanelIcrud" stylesheets="@../estilos/cliente.css" text="Guardar Cambios" />
+            <Button layoutX="14.0" layoutY="473.0" mnemonicParsing="false" styleClass="btnCancel" stylesheets="@../estilos/cliente.css" text="Mensajería" />
+            <Separator layoutX="16.0" layoutY="463.0" opacity="0.66" prefHeight="3.0" prefWidth="317.0" style="-fx-background-color: grey;" />
+            <TextField fx:id="txtNewNombre" layoutX="67.0" layoutY="221.0" prefHeight="25.0" prefWidth="200.0" promptText="write here..." />
+            <Text layoutX="32.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre Actual:">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Text>
+            <Label fx:id="lblNombreUsu_Nombre" layoutX="133.0" layoutY="142.0" prefHeight="17.0" prefWidth="185.0" text="Nombre actual del usuario" />
+            <Label fx:id="lblFecha" alignment="CENTER_RIGHT" layoutX="212.0" layoutY="445.0" prefHeight="17.0" prefWidth="122.0" text="fecha">
+               <font>
+                  <Font name="Consolas Bold" size="10.0" />
+               </font></Label>
+            <Text layoutX="67.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nuevo Nombre:">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Text>
+            <Text layoutX="67.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Apellido Paterno">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <TextField fx:id="txtApellidoPaterno" layoutX="67.0" layoutY="287.0" prefHeight="25.0" prefWidth="200.0" promptText="write here..." />
+            <Text layoutX="67.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Apellido Materno">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <TextField fx:id="txtApellidoMaterno" layoutX="67.0" layoutY="342.0" prefHeight="25.0" prefWidth="200.0" promptText="write here..." />
+         </children>
+      </Pane>
+      <AnchorPane fx:id="apPerfil" layoutX="204.0" layoutY="27.0" prefHeight="546.0" prefWidth="700.0" style="-fx-background-color: lightgrey;">
+         <children>
+            <Label fx:id="lblHolaUsuario" alignment="TOP_CENTER" layoutX="116.0" layoutY="14.0" prefHeight="23.0" prefWidth="468.0" text="¡Hola!, Nombre de usuario">
+               <font>
+                  <Font name="Verdana Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblCorreo" alignment="TOP_CENTER" layoutX="214.0" layoutY="204.0" prefHeight="17.0" prefWidth="273.0" text="correoempresarial@usuario.com" />
+            <Circle fx:id="circleImg" fill="#c6c6c6" layoutX="350.0" layoutY="119.0" radius="69.0" stroke="#0000001c" strokeType="INSIDE" />
+            <Hyperlink layoutX="278.0" layoutY="187.0" onAction="#linkCambiarPerfil" text="Cambiar imagen de perfil" textFill="#006fff" />
+            <Button layoutX="420.0" layoutY="185.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnGuardarImgPerfil" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: #c3c3c3; -fx-background-radius: 0;">
+               <graphic>
+                  <ImageView fitHeight="14.0" fitWidth="14.0" opacity="0.55" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../iconos/save.png" />
+                     </image>
+                     <effect>
+                        <Lighting diffuseConstant="0.62" specularConstant="1.12" specularExponent="0.0">
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant color="BLACK" />
+                           </light>
+                        </Lighting>
+                     </effect>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <ImageView fitHeight="16.0" fitWidth="16.0" layoutX="161.0" layoutY="526.0" opacity="0.65" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../iconos/Logo.png" />
+               </image>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant color="BLACK" />
+                     </light>
+                  </Lighting>
+               </effect>
+            </ImageView>
+            <Hyperlink layoutY="522.0" text="Politica y privacidad de la empresa" textFill="#575757">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Hyperlink>
+            <Button layoutX="639.0" layoutY="518.0" mnemonicParsing="false" onAction="#btnSoporte" styleClass="btnPanelIcrud" stylesheets="@../estilos/cliente.css" text="Soporte" />
+            <Separator layoutX="191.0" layoutY="220.0" opacity="0.39" prefHeight="3.0" prefWidth="317.0" style="-fx-background-color: grey;" />
+            <Text layoutX="36.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="En la cosmología se puede apreciar diversos ángulos mitológicos, filosóficos, teológicos, etc. Sin embargo, el concepto entre todas estas teorías mitológicas está el concepto que nos dan las escrituras bíblicas, a gran diferencia de las demás que se basan en tener un concepto metafísico o a través de las mitologías del mundo antiguo." textAlignment="JUSTIFY" wrappingWidth="626.13671875" />
+            <Text layoutX="36.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Biografia:">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="36.0" layoutY="349.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Blog:">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Label layoutX="36.0" layoutY="352.0" prefHeight="17.0" prefWidth="273.0" text="www.virtualtravelsblogs.com" />
+            <Text layoutX="36.0" layoutY="396.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email (correo):">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Label layoutX="36.0" layoutY="399.0" prefHeight="17.0" prefWidth="273.0" text="virtualtravels@gmail.com" />
+            <Label fx:id="lblhoverInfo" layoutX="570.0" layoutY="224.0" prefHeight="19.0" prefWidth="108.0" style="-fx-background-color: white; -fx-background-radius: 5; -fx-border-color: grey; -fx-border-radius: 5;" text=" editar información" visible="false" />
+            <ImageView fitHeight="18.0" fitWidth="18.0" layoutX="660.0" layoutY="204.0" onMouseClicked="#btnEditInfo" onMouseEntered="#infoEnt" onMouseExited="#infoExt" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../iconos/acerca_de.png" />
+               </image>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant color="#6b6b6b" />
+                     </light>
+                  </Lighting>
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Text fill="#aeaeae" layoutX="11.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenido a la configuracion de tu cuenta, en esta ventana podras cambiar los datos personales registrados en tu cuenta. Debes tener en cuenta que todo cambio que realices podra ser visto por el administrador." textAlignment="JUSTIFY" wrappingWidth="184.99998664855957">
+         <font>
+            <Font name="Verdana" size="12.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
