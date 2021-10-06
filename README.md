@@ -6,7 +6,7 @@ Para la ejecución del programa es necesario tener como minimo jdk 8, si no lo t
 
 Una vez instalado el jdk podras ingresar a la aplicación sin ningun problema, haciendo click en el ejecutable que estará en la carpeta dist/virtualtravels.jar
 
-###Vistas
+##Vistas
 
 Login:
 
