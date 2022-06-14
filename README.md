@@ -2,7 +2,7 @@
 
 **Ejecucion del programa:**
 
-Para la ejecución del programa es necesario tener como minimo jdk 8, si no lo tienes descargado haz click en el siguiente enlace para descargar [jdk 8](http://https://www.oracle.com/java/technologies/downloads/#jdk17-windows "jdk 8").
+Para la ejecución del programa es necesario tener como minimo jdk 8, si no lo tienes descargado haz click en el siguiente enlace para descargar [jdk 8](https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html "jdk 8").
 
 Una vez instalado el jdk podras ingresar a la aplicación sin ningun problema, haciendo click en el ejecutable que estará en la carpeta dist/virtualtravels.jar
 
